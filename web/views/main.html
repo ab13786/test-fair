@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Kiwanis Fair - Main</title>
+
+        <link  href="/stylesheets/main.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="main.html" >Home</a></li>
+                    <li><a href="Vendors.html">Vendors</a></li>
+                    <li><a href="News.html">News</a></li>
+                    <li><a href="Applications.php">Applications</a></li>
+                    <li><a href="Shows.html">Shows</a></li>
+                    <li><a href="Map.html">Map</a></li>
+                    <li><a href="Sponsors.html">Sponsors</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <h1>Time Until Kiwanis Ogeechee fair 2020</h1>
+        <div id="countdown">
+            <script>
+                function countdownTimer() {
+                    const difference = +new Date("2020-10-19") - +new Date();
+                    let remaining = "Time's up!";
+
+                    if (difference > 0) {
+                      const parts = {
+                        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+                        hours: Math.floor((difference / (1000 * 60 * 60)) % 24)+12,
+                        minutes: Math.floor((difference / 1000 / 60) % 60),
+                        seconds: Math.floor((difference / 1000) % 60)
+                      };
+
+                      remaining = Object.keys(parts)
+                        .map(part => {
+                          if (!parts[part]) return;
+                          return `${parts[part]} ${part}`;
+                        })
+                        .join(" ");
+                    }
+
+                    document.getElementById("countdown").innerHTML = remaining;
+                }
+
+                countdownTimer();
+                setInterval(countdownTimer, 1000);
+            </script>
+        </div>
+        <br>
+        <br>
+    </body>
+</html>
