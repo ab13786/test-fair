@@ -61,7 +61,7 @@
 
                     if($results->num_rows>0){
                         echo "<table><tr><th>LegoAppID</th><th>Builder 1 Name</th><th>Builder 2 Name</th><th>DOB Builder 1</th><th>Address</th><th>Phone Number</th><th>Email</th></tr>";
-                        while($row = $results-.fetch_assoc()){
+                        while($row = $results->fetch_assoc()){
                             echo "<tr><td>". $row['LegoAppID']. "</td><td>". $row['Builder1FN']. " ". $row['Builder1LN']. "</td><td>". $row['Builder2FN']. " ". $row['Builder2LN']. "</td><td>". $row['DOBuilder1']. "</td><td>". $row['Address']. "</td><td>". $row[$PhoneNumber]. "</td><td>". $row['Email']. "</td></tr>";
                         }
                         echo "</table>";
