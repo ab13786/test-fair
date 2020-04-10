@@ -55,7 +55,7 @@
                     $password = "KiwanisClub";
                     $db = "applications";
 
-                    $con = new mysqli($host, $user, $password. $db);
+                    $con = new mysqli($host, $user, $password, $db);
                     $sql = "SELECT * From applications.LegoApp";
                     $results = $con->query($sql);
 
