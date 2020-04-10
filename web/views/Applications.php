@@ -53,6 +53,7 @@
                     $port = "3306";
                     $user = "fair_admin";
                     $password = "KiwanisClub";
+                    $db = "applications";
 
                     $conn = mysqli_connect($host, $user, $password);
 
@@ -60,6 +61,13 @@
                         die("Connection failed: " . mysqli_connect_error());
 
                     echo "Connected succesfully";
+
+                    $con = new mysqli($host, $user, $password. $db);
+                    $sql = "SELECT * From applications.LegoAPP";
+                    $results = $con->query($sql);
+
+                    echo $results;
+                    $con->close();
                 ?>
             </section>
         </div>
