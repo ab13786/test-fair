@@ -46,6 +46,27 @@
 
         <div id="all" class="tabcontent">
             <h1>Query for all shows in database</h1>
+            <?php
+                    $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
+                    $port = "3306";
+                    $user = "fair_admin";
+                    $password = "KiwanisClub";
+                    $db = "applications";
+
+                    $con = new mysqli($host, $user, $password, $db);
+                    $sql = "SELECT * From applications.Sponsors";
+                    $results = $con->query($sql);
+
+                    if($results->num_rows>0){
+                        echo "<table><tr><th>SponsorID</th><th>Sponsor Name</th><th>Sponsor Title</th><th>Sponsor Logo</th></tr>";
+                        while($row = $results->fetch_assoc()){
+                            echo "<tr><td>". $row['SponsorID']. "</td><td>". $row['SponsorName']. "</td><td>". $row['SponsorTitle']. "</td><td>". $row['SponsorLogo']. "</td></tr>";
+                        }
+                        echo "</table>";
+                    }
+
+                    $con->close();
+                ?>
         </div>
 
         <div id="add" class="tabcontent">
