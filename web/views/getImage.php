@@ -15,6 +15,6 @@
 
                     $con->close();
 
-                    header=("Content-type: image/jpeg");
+                    header=("Content-type: image/png");
                     echo $row['SponsorLogo'];
                 ?>
