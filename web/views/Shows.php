@@ -60,7 +60,7 @@
                     if($results->num_rows>0){
                         echo "<table><tr><th>SponsorID</th><th>Sponsor Name</th><th>Sponsor Title</th><th>Sponsor Logo</th></tr>";
                         while($row = $results->fetch_assoc()){
-                            echo "<tr><td>". $row['SponsorID']. "</td><td>". $row['SponsorName']. "</td><td>". $row['SponsorTitle']. "</td><td><img src=\"getImage.php?id=". $row['SponsorID']. "\"></td></tr>";
+                            echo "<tr><td>". $row['SponsorID']. "</td><td>". $row['SponsorName']. "</td><td>". $row['SponsorTitle']. "</td><td><img src=\"getImage.php?id=". $row['SponsorID']. " alt=\"uh-oh\"></td></tr>";
                         }
                         echo "</table>";
                     }
