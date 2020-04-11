@@ -54,7 +54,7 @@
                     $db = "applications";
 
                     $con = new mysqli($host, $user, $password, $db);
-                    $sql = "SELECT * From applications.LegoApp";
+                    $sql = "SELECT * From applications.Live_Entertainment";
                     $results = $con->query($sql);
 
                     if($results->num_rows>0){
