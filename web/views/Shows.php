@@ -11,11 +11,11 @@
             <nav>
                 <ul>
                     <li><a href="/views/main.html" >Home</a></li>
-                    <li><a href="/views/Vendors.html">Vendors</a></li>
-                    <li><a href="/views/News.html">News</a></li>
+                    <li><a href="/views/Vendors.php">Vendors</a></li>
+                    <li><a href="/views/News.php">News</a></li>
                     <li><a href="/views/Applications.php">Applications</a></li>
                     <li><a href="/views/Shows.php">Shows</a></li>
-                    <li><a href="/views/Map.html">Map</a></li>
+                    <li><a href="/views/Map.php">Map</a></li>
                     <li><a href="/views/Sponsors.php">Sponsors</a></li>
                 </ul>
             </nav>
