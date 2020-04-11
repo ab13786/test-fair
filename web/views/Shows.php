@@ -14,9 +14,9 @@
                     <li><a href="/views/Vendors.html">Vendors</a></li>
                     <li><a href="/views/News.html">News</a></li>
                     <li><a href="/views/Applications.php">Applications</a></li>
-                    <li><a href="/views/Shows.html">Shows</a></li>
+                    <li><a href="/views/Shows.php">Shows</a></li>
                     <li><a href="/views/Map.html">Map</a></li>
-                    <li><a href="/views/Sponsors.html">Sponsors</a></li>
+                    <li><a href="/views/Sponsors.php">Sponsors</a></li>
                 </ul>
             </nav>
         </header>
@@ -46,27 +46,7 @@
 
         <div id="all" class="tabcontent">
             <h1>Query for all shows in database</h1>
-            <?php
-                    $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
-                    $port = "3306";
-                    $user = "fair_admin";
-                    $password = "KiwanisClub";
-                    $db = "applications";
 
-                    $con = new mysqli($host, $user, $password, $db);
-                    $sql = "SELECT * From applications.Sponsors";
-                    $results = $con->query($sql);
-
-                    if($results->num_rows>0){
-                        echo "<table><tr><th>SponsorID</th><th>Sponsor Name</th><th>Sponsor Title</th><th>Sponsor Logo</th></tr>";
-                        while($row = $results->fetch_assoc()){
-                            echo "<tr><td>". $row['SponsorID']. "</td><td>". $row['SponsorName']. "</td><td>". $row['SponsorTitle']. "</td><td><img src=\"getImage.php?id=". $row['SponsorID']. " alt=\"uh-oh\"></td></tr>";
-                        }
-                        echo "</table>";
-                    }
-
-                    $con->close();
-                ?>
         </div>
 
         <div id="add" class="tabcontent">
