@@ -67,7 +67,13 @@
                       header("Content-Type: application/vnd.ms-excel");
 
                       $flag = false;
-                      $result = pg_query("SELECT * FROM table ORDER BY field") or die('Query failed!');
+                      $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
+                      $port = "3306";
+                      $user = "fair_admin";
+                      $password = "KiwanisClub";
+                      $db = "applications";
+                      $con = new mysqli($host, $user, $password, $db);
+                      $result = "SELECT * From applications.LegoApp" or die('Query failed!');
                       while(false !== ($row = pg_fetch_assoc($result))) {
                         if(!$flag) {
                           // display field/column names as first row
