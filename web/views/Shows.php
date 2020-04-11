@@ -46,7 +46,27 @@
 
         <div id="all" class="tabcontent">
             <h1>Query for all shows in database</h1>
+            <?php
+                    $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
+                    $port = "3306";
+                    $user = "fair_admin";
+                    $password = "KiwanisClub";
+                    $db = "applications";
 
+                    $con = new mysqli($host, $user, $password, $db);
+                    $sql = "SELECT * From applications.LegoApp";
+                    $results = $con->query($sql);
+
+                    if($results->num_rows>0){
+                        echo "<table><tr><th>EventID</th><th>Event Name</th><th>Event Time</th><th>Event Date</th><th>Description</th></tr>";
+                        while($row = $results->fetch_assoc()){
+                            echo "<tr><td>". $row['EventID']. "</td><td>". $row['Event Name'].  "</td><td>". $row['Event Time']. "</td><td>". $row['EventDate']. "</td><td>". $row['Description']. "</td></tr>";
+                        }
+                        echo "</table>";
+                    }
+
+                    $con->close();
+                ?>
         </div>
 
         <div id="add" class="tabcontent">
