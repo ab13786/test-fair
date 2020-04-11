@@ -47,45 +47,30 @@
         <div id="lego" class="tabcontent">
             <button name="download" class="btn" onclick=""><i class="fa fa-download"></i> Download</button>
 
-                <?PHP
+             <?php
+                    $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
+                    $port = "3306";
+                    $user = "fair_admin";
+                    $password = "KiwanisClub";
+                    $db = "applications";
 
-                if(array_key_exsists('download', $_POST){
-                      // Original PHP code by Chirp Internet: www.chirp.com.au
-                      // Please acknowledge use of this code by including this header.
+                    $conn = new mysqli($host, $user, $password, $db);
+                    $filename = "Webinfopen.xls"; // File Name
+                    // Download file
+                    header("Content-Disposition: attachment; filename=\"$filename\"");
+                    header("Content-Type: application/vnd.ms-excel");
+                    $user_query = "SELECT * From applications.LegoApp";
 
-                      function cleanData(&$str)
-                      {
-                        $str = preg_replace("/\t/", "\\t", $str);
-                        $str = preg_replace("/\r?\n/", "\\n", $str);
-                        if(strstr($str, '"')) $str = '"' . str_replace('"', '""', $str) . '"';
-                      }
-
-                      // filename for download
-                      $filename = "website_data_" . date('Ymd') . ".xls";
-
-                      header("Content-Disposition: attachment; filename=\"$filename\"");
-                      header("Content-Type: application/vnd.ms-excel");
-
-                      $flag = false;
-                      $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
-                      $port = "3306";
-                      $user = "fair_admin";
-                      $password = "KiwanisClub";
-                      $db = "applications";
-                      $con = new mysqli($host, $user, $password, $db);
-                      $result = "SELECT * From applications.LegoApp" or die('Query failed!');
-                      while(false !== ($row = pg_fetch_assoc($result))) {
-                        if(!$flag) {
-                          // display field/column names as first row
-                          echo implode("\t", array_keys($row)) . "\r\n";
-                          $flag = true;
+                    $flag = false;
+                    while ($row = mysql_fetch_assoc($user_query)) {
+                        if (!$flag) {
+                            // display field/column names as first row
+                            echo implode("\t", array_keys($row)) . "\r\n";
+                            $flag = true;
                         }
-                        array_walk($row, __NAMESPACE__ . '\cleanData');
                         echo implode("\t", array_values($row)) . "\r\n";
-                      }
-                      exit;
-                  }
-                ?>
+                    }
+                    ?>
 
             <section style="clear:both;">
                 <h1>Query for all lego applications in database</h1>
