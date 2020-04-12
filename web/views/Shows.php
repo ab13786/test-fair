@@ -110,7 +110,7 @@
                 $description = $_POST['description'];
 
                 $con = new mysqli($host, $user, $password, $db);
-                $sql = "INSERT INTO `applications`.`Live_Entertainment` (`EventID`, `Event Name`, `Event Time`, `Description`, `EventDate`) VALUES (`2`,". "`". $name ."`, `" .$time ."`, `" .$description ."`, `" .$date ."`");";
+                $sql = "INSERT INTO applications.Live_Entertainment (`EventID`, `Event Name`, `Event Time`, `Description`, `EventDate`) VALUES (" ."`2`, `". $name ."`, `" .$time ."`, `" .$description ."`, `" .$date ."`)";
                 $results = $con->query($sql);
             }
         ?>
