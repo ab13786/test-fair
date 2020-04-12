@@ -79,7 +79,6 @@
                 $results = $con->query($sql);
 
                 header("Refresh:0");
-                //echo "<script>alert('All Shows will update when you visit another tab and return.')</script>";
             }
         ?>
 
