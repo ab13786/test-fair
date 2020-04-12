@@ -55,7 +55,7 @@
                         <textarea  id="text" name="message" placeholder="Enter message here"></textarea>
 
                         <section id="submitButtons">
-                            <a href="News.php"><input  name="submit" id="submit" value ="Send" type="submit" class="submission"></a>
+                            <input  name="submit" id="submit" value ="Send" type="submit" class="submission">
                         </section>
                     </fieldset>
                 </form>
