@@ -22,26 +22,26 @@
         </header>
 
         <div class="tab">
-                <button class="tablinks" onclick="opentab(event,'all')">All Sponsors</button>
-                <button class="tablinks" onclick="opentab(event,'update')">Add Sponsors</button>
-            </div>
+            <button class="tablinks" onclick="opentab(event,'all')">All News</button>
+            <button class="tablinks" onclick="opentab(event,'update')">Update News</button>
+        </div>
 
-                <script>
-                function opentab(evt, tabName) {
+            <script>
+            function opentab(evt, tabName) {
 
-                  var i, tabcontent, tablinks;
-                  tabcontent = document.getElementsByClassName("tabcontent");
-                  for (i = 0; i < tabcontent.length; i++) {
-                    tabcontent[i].style.display = "none";
-                  }
-                  tablinks = document.getElementsByClassName("tablinks");
-                  for (i = 0; i < tablinks.length; i++) {
-                    tablinks[i].className = tablinks[i].className.replace(" active", "");
-                  }
-                  document.getElementById(tabName).style.display = "block";
-                  evt.currentTarget.className += " active";
-                }
-            </script>
+              var i, tabcontent, tablinks;
+              tabcontent = document.getElementsByClassName("tabcontent");
+              for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+              }
+              tablinks = document.getElementsByClassName("tablinks");
+              for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+              }
+              document.getElementById(tabName).style.display = "block";
+              evt.currentTarget.className += " active";
+            }
+        </script>
 
         <div id="update" class="tabcontent">
             <section>
