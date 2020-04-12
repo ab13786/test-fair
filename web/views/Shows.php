@@ -113,7 +113,7 @@
                 $sql = "INSERT INTO `applications`.`Live_Entertainment` (`Event Name`, `Event Time`, `Description`, `EventDate`) VALUES (" ."'". $name ."', '" .$time ."', '" .$description ."', '" .$date ."');";
                 $results = $con->query($sql);
 
-                echo "<script>alert('All Shows will update when you visit another tab and return.')</script>";
+                echo "<script>alert('All Shows will update when you visit another tab and return. DO NOT referesh page.')</script>";
             }
         ?>
 
