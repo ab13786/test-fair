@@ -85,10 +85,10 @@
                         <input id="time" name="showTime" type="time" placeholder="hh:mm:ss">
 
                         <label for="description">Description: </label>
-                        <textarea  id="description" placeholder="Enter Description here"></textarea>
+                        <textarea  id="description" name="showDescription" placeholder="Enter Description here"></textarea>
 
                         <section id="submitButtons">
-                            <input  id="submit" value ="Submit" type="submit" class="submission">
+                            <input  id="submit" value ="Submit" type="submit" name="submit" class="submission">
                         </section>
                     </fieldset>
                 </form>
@@ -104,15 +104,15 @@
             $db = "applications";
 
             if(isset($_POST['submit'])){
-                $name = $_POST['Title'];
-                $date = $_POST['date'];
-                $time = $_POST['time'];
-                $description = $_POST['description'];
+                $name = $_POST['showTitle'];
+                $date = $_POST['showDate'];
+                $time = $_POST['showTime'];
+                $description = $_POST['showDescription'];
 
                 $con = new mysqli($host, $user, $password, $db);
                 $sql = "INSERT INTO applications.Live_Entertainment (`Event Name`, `Event Time`, `Description`, `EventDate`) VALUES (" ."`". $name ."`, `" .$time ."`, `" .$description ."`, `" .$date ."`)";
                 $results = $con->query($sql);
-                
+
                 echo "<script>alert('INSERT succesful')</script>";
             }
         ?>
