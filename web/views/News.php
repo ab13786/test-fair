@@ -78,7 +78,8 @@
                 $sql = "INSERT INTO `applications`.`News` (`subject`, `message`) VALUES (" ."'". $subject ."', '" .$message ."');";
                 $results = $con->query($sql);
 
-                echo "<script>alert('All Shows will update when you visit another tab and return.')</script>";
+                header("Refresh:0");
+                //echo "<script>alert('All Shows will update when you visit another tab and return.')</script>";
             }
         ?>
 
