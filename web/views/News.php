@@ -21,22 +21,70 @@
             </nav>
         </header>
 
-		<section>
-			<form>
-				<fieldset>
-					<legend> News Update</legend>
+        <div class="tab">
+                <button class="tablinks" onclick="opentab(event,'all')">All Sponsors</button>
+                <button class="tablinks" onclick="opentab(event,'update')">Add Sponsors</button>
+            </div>
 
-					<label for = "Subject"> Subject: </label>
-					<input type="text" id="Subject" placeholder="Enter Subject">
+                <script>
+                function opentab(evt, tabName) {
 
-					<textarea  id="text" placeholder="Enter message here"></textarea>
+                  var i, tabcontent, tablinks;
+                  tabcontent = document.getElementsByClassName("tabcontent");
+                  for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                  }
+                  tablinks = document.getElementsByClassName("tablinks");
+                  for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                  }
+                  document.getElementById(tabName).style.display = "block";
+                  evt.currentTarget.className += " active";
+                }
+            </script>
 
-					<section id="submitButtons">
-						<input  id="submit" value ="Send" type="submit" class="submission">
-					</section>
-				</fieldset>
-			</form>
-			<br>
-		</section>
+        <div id="update" class="tabcontent">
+            <section>
+                <form>
+                    <fieldset>
+                        <legend> News Update</legend>
+
+                        <label for = "Subject"> Subject: </label>
+                        <input type="text" id="Subject" placeholder="Enter Subject">
+
+                        <textarea  id="text" placeholder="Enter message here"></textarea>
+
+                        <section id="submitButtons">
+                            <input  id="submit" value ="Send" type="submit" class="submission">
+                        </section>
+                    </fieldset>
+                </form>
+                <br>
+            </section>
+		</div>
+
+		<div id="all" class="tabcontent">
+            <h1>Query for all news in database</h1>
+            <?php
+                    $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
+                    $port = "3306";
+                    $user = "fair_admin";
+                    $password = "KiwanisClub";
+                    $db = "applications";
+
+                    $con = new mysqli($host, $user, $password, $db);
+                    $sql = "SELECT * From applications.News";
+                    $results = $con->query($sql);
+
+                    if($results->num_rows>0){
+                        echo "<table><tr><th>newsID</th><th>subject</th><th>message</th></tr>";
+                        while($row = $results->fetch_assoc()){
+                            echo "<tr><td>". $row['newsID']. "</td><td>". $row['subject']. "</td><td>". $row['message']. "</td></tr>";
+                        }
+                        echo "</table>";
+                    }
+                    $con->close();
+                ?>
+        </div>
     </body>
 </html>
