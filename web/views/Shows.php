@@ -113,7 +113,7 @@
                 $sql = "INSERT INTO applications.Live_Entertainment (`Event Name`, `Event Time`, `Description`, `EventDate`) VALUES (" ."`". $name ."`, `" .$time ."`, `" .$description ."`, `" .$date ."`)";
                 $results = $con->query($sql);
 
-                echo "<script>alert('INSERT succesful')</script>";
+                echo "<script>alert('". $name ."')</script>";
             }
         ?>
 
