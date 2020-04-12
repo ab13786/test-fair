@@ -71,18 +71,18 @@
 
         <div id="add" class="tabcontent">
             <section>
-                <form>
+                <form action="" method="POST">
                     <fieldset>
-                        <legend> News Update</legend>
+                        <legend> Shows Update</legend>
 
                         <label for = "Title"> Title: </label>
                         <input type="text" id="Title" name="showTitle" placeholder="Enter Title">
 
                         <label for="date">Date: </label>
-                        <input type="date" id="date" name="showDate">
+                        <input type="date" id="date" name="showDate" placeholder="yyyy-mm-dd">
 
                         <label for="time">Time: </label>
-                        <input id="time" name="showTime" type="time">
+                        <input id="time" name="showTime" type="time" placeholder="hh:mm:ss">
 
                         <label for="description">Description: </label>
                         <textarea  id="description" placeholder="Enter Description here"></textarea>
@@ -95,6 +95,25 @@
                 <br>
 		    </section>
         </div>
+
+        <?php
+            $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
+            $port = "3306";
+            $user = "fair_admin";
+            $password = "KiwanisClub";
+            $db = "applications";
+
+            if(isset($_POST['submit'])){
+                $name = $_POST['Title'];
+                $date = $_POST['date'];
+                $time = $_POST['time'];
+                $description = $_POST['description'];
+
+                $con = new mysqli($host, $user, $password, $db);
+                $sql = "INSERT INTO `applications`.`Live_Entertainment` (`EventID`, `Event Name`, `Event Time`, `Description`, `EventDate`) VALUES (". "`". $name ."`, `" .$time ."`, `" .$description ."`, `" .$date ."`");";
+                $results = $con->query($sql);
+            }
+        ?>
 
         <div id="attendance" class="tabcontent">
             <h1>Query database for planned show attendance</h1>
