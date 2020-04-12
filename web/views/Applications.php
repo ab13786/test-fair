@@ -77,6 +77,29 @@
             <button class="btn"><i class="fa fa-download"></i> Download</button>
             <section style="clear:both;">
                 <h1>Query for all parade applications in database</h1>
+
+                <?php
+                    $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
+                    $port = "3306";
+                    $user = "fair_admin";
+                    $password = "KiwanisClub";
+                    $db = "applications";
+
+                    $con = new mysqli($host, $user, $password, $db);
+                    $sql = "SELECT * From applications.ParadeApp";
+                    $results = $con->query($sql);
+
+                    if($results->num_rows>0){
+                        echo "<table><tr><th>Parade ID</th><th>Contact Name</th><th>Phone Number</th><th>Email</th><th>Contact Address</th><th>Contact City</th><th>Contact State</th><th>Contact Zip</th><th>Group Name</th><th>Sponsor Name</th><th>Sponsor Address</th><th>Sponsor City</th><th>Sponsor State</th><th>Sponsor Zip</th><th>Num. Participants</th><th>Description</th><th>Float</th><th>Vehicle</th><th>Band</th><th>Theme</th></tr>";
+                        while($row = $results->fetch_assoc()){
+                            echo "<tr><td>". $row['ParadeAppID']. "</td><td>". $row['ContactFN'] ." ". $row['ContactLN'] ."</td></tr>";
+                        }
+                        echo "</table>";
+                    }
+
+                    $con->close();
+                ?>
+
             </section>
         </div>
     </body>
