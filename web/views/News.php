@@ -50,18 +50,37 @@
                         <legend> News Update</legend>
 
                         <label for = "Subject"> Subject: </label>
-                        <input type="text" id="Subject" placeholder="Enter Subject">
+                        <input type="text" id="Subject" name="Subject" placeholder="Enter Subject">
 
-                        <textarea  id="text" placeholder="Enter message here"></textarea>
+                        <textarea  id="text" name="message" placeholder="Enter message here"></textarea>
 
                         <section id="submitButtons">
-                            <input  id="submit" value ="Send" type="submit" class="submission">
+                            <a href="News.php"><input  name="submit" id="submit" value ="Send" type="submit" class="submission"></a>
                         </section>
                     </fieldset>
                 </form>
                 <br>
             </section>
 		</div>
+
+		<?php
+            $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
+            $port = "3306";
+            $user = "fair_admin";
+            $password = "KiwanisClub";
+            $db = "applications";
+
+            if(isset($_POST['submit'])){
+                $subject = $_POST['Subject'];
+                $message = $_POST['message'];
+
+                $con = new mysqli($host, $user, $password, $db);
+                $sql = "INSERT INTO `applications`.`News` (`subject`, `message`) VALUES (" ."'". $subject ."', '" .$message ."');";
+                $results = $con->query($sql);
+
+                echo "<script>alert('All Shows will update when you visit another tab and return.')</script>";
+            }
+        ?>
 
 		<div id="all" class="tabcontent">
             <h1>Query for all news in database</h1>
