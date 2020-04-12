@@ -45,7 +45,7 @@
         </script>
 
         <div id="lego" class="tabcontent">
-            <button class="btn" value="download"><i class="fa fa-download"></i><a href="/views/download.php"> Download</a></button>
+            <button class="btn" value="download"><i class="fa fa-download"></i><a href="/views/download.php" style="color:white;"> Download</a></button>
 
             <section style="clear:both;">
                 <h1>Query for all lego applications in database</h1>
