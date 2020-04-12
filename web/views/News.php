@@ -45,7 +45,7 @@
 
         <div id="update" class="tabcontent">
             <section>
-                <form>
+                <form action="" method="POST">
                     <fieldset>
                         <legend> News Update</legend>
 
