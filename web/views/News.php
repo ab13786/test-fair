@@ -96,9 +96,9 @@
                     $results = $con->query($sql);
 
                     if($results->num_rows>0){
-                        echo "<table><tr><th>newsID</th><th>subject</th><th>message</th></tr>";
+                        echo "<table><tr><th>newsID</th><th>subject</th><th>message</th><th>Delete</th></tr>";
                         while($row = $results->fetch_assoc()){
-                            echo "<tr><td>". $row['newsID']. "</td><td>". $row['subject']. "</td><td>". $row['message']. "</td></tr>";
+                            echo "<tr><td>". $row['newsID']. "</td><td>". $row['subject']. "</td><td>". $row['message']. "</td><td><button type='button' value='Delete'>Delete</button></td></tr>";
                         }
                         echo "</table>";
                     }
