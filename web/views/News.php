@@ -84,6 +84,12 @@
 
 		<div id="all" class="tabcontent">
             <h1>Query for all news in database</h1>
+            <form action="" method="Delete">
+                <label for = "del"> Delete Row: </label>
+                <input type="text" id="del" name="del" placeholder="Enter ID">
+
+                <button type='button' name="delete" value='Delete'>Delete</button></td>
+            </form>
             <?php
                     $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
                     $port = "3306";
@@ -96,14 +102,32 @@
                     $results = $con->query($sql);
 
                     if($results->num_rows>0){
-                        echo "<table><tr><th>newsID</th><th>subject</th><th>message</th><th>Delete</th></tr>";
+                        echo "<table><tr><th>newsID</th><th>subject</th><th>message</th></tr>";
                         while($row = $results->fetch_assoc()){
-                            echo "<tr><td>". $row['newsID']. "</td><td>". $row['subject']. "</td><td>". $row['message']. "</td><td><button type='button' value='Delete'>Delete</button></td></tr>";
+                            echo "<tr><td>". $row['newsID']. "</td><td>". $row['subject']. "</td><td>". $row['message']. "</td></tr>";
                         }
                         echo "</table>";
                     }
                     $con->close();
                 ?>
         </div>
+
+        <?php
+            $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
+            $port = "3306";
+            $user = "fair_admin";
+            $password = "KiwanisClub";
+            $db = "applications";
+
+            if(isset($_Delete['delete'])){
+                $id = $_Delete['del'];
+
+                $con = new mysqli($host, $user, $password, $db);
+                $sql = "DELETE FROM applications.News WHERE (`newsID` = $id);";
+                $results = $con->query($sql);
+
+                header("Refresh:0");
+            }
+        ?>
     </body>
 </html>
