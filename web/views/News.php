@@ -84,7 +84,7 @@
 
 		<div id="all" class="tabcontent">
             <h1>Query for all news in database</h1>
-            <form action="" method="Delete">
+            <form action="" method="POST">
                 <label for = "del"> Delete Row: </label>
                 <input type="text" id="del" name="del" placeholder="Enter ID">
 
@@ -119,8 +119,8 @@
             $password = "KiwanisClub";
             $db = "applications";
 
-            if(isset($_Delete['delete'])){
-                $id = $_Delete['del'];
+            if(isset($_POST['delete'])){
+                $id = $_POST['del'];
 
                 $con = new mysqli($host, $user, $password, $db);
                 $sql = "DELETE FROM applications.News WHERE (`newsID` = $id);";
