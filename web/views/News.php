@@ -88,7 +88,7 @@
                 <label for = "del"> Delete Row: </label>
                 <input type="text" id="del" name="del" placeholder="Enter ID">
 
-                <input type="submit" value="Delete" id="delete" name="delete">
+                <input type="submit" value="Delete" id="delete" name="delete" class="deletion">
             </form>
             <?php
                     $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
