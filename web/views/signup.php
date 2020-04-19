@@ -8,7 +8,7 @@
     </head>
     <body>
         <header>
-            <img src="kiawanis-fair.jpeg" alt="Kiwanis Logo">
+            <img src="/images/kiawanis-fair.jpeg" alt="Kiwanis Logo">
         </header>
 
         <section>
