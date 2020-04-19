@@ -12,8 +12,9 @@
 		$result = $con->query($sql);
 		
 		if($result->num_rows==0){
-			$_SESSION['message'] = "User with that email doesn't exist!";
-			header("location: /views/error.php");
+		    echo "<script>alert('User with that email doesn't exist!');</script>";
+			//$_SESSION['message'] = "User with that email doesn't exist!";
+			//header("location: /views/error.php");
 		}
 		else{
 			$user = $result->fetch_assoc();
@@ -25,8 +26,9 @@
 				header("location: /views/main.html");
 			}
 			else {
-				$_SESSION['message'] = "You have entered the wrong password, try again!";
-				header("location: /views/error.php");
+			    echo "<script>alert('You have entered the wrong password, try again!');</script>";
+				//$_SESSION['message'] = "You have entered the wrong password, try again!";
+				//header("location: /views/error.php");
 			}
 		}
 	}
