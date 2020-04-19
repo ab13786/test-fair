@@ -41,7 +41,7 @@
                 $con = new mysqli($host, $user, $passwordAdmin, $db);
                 session_start();
 
-                $email = $con->escape_string($_POST['Email']);
+                $email = $_POST['Email'];
                 $sql = "SELECT *FROM applications.users WHERE email = '".$email."'";
                 $result = $con->query($sql);
 
