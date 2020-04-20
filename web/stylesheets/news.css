@@ -139,9 +139,6 @@ fieldset{
   border-top: none;
 }
 
-#del{
-    all:none;
-}
 
 /* table syling */
 div.tabcontent{
@@ -170,6 +167,13 @@ table, td{
     background-color:white;
 }
 
-tr:nth-child(even){
-    background-color:#f2f2f2;
+#del{
+    width:auto;
+}
+
+#none{
+    display:inline-block;
+    margin-bottom:10px;
+    width:auto;
+    padding-left:50px;
 }
