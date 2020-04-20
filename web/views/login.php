@@ -26,9 +26,7 @@
                     </section>					
                 </fieldset>
             </form>
-// 			<form action = "/views/signup.php" method ="post">
-// 				<input type = "submit" value ="Signup" class= "submission">
-// 			</form>
+
             <br>
         </section>
     </body>
