@@ -139,7 +139,9 @@ fieldset{
   border-top: none;
 }
 
-
+.del{
+    all:none;
+}
 
 /* table syling */
 div.tabcontent{
@@ -147,5 +149,6 @@ div.tabcontent{
 }
 
 table, th, td{
-    border: 1px solid #0099FF;
+    border: 0px solid #0099FF;
+    background-color:white;
 }
