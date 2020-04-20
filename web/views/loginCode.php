@@ -13,8 +13,7 @@
 		$result = $con->query($sql);
 		
 		if($result->num_rows==0){
-		    echo '<script>alert("User with that email does not exist!")</script>';
-		    header("Refresh:0");
+		    echo '<script>if(!alert("Alert For your User!")){window.location.reload();}</script>';
 		}
 		else{
 			$user = $result->fetch_assoc();
