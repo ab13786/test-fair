@@ -14,7 +14,7 @@
 		
 		if($result->num_rows==0){
 		    echo '<script>alert("User with that email does not exist!")</script>';
-		    header("location: /views/login.php");
+		    header("Refresh:0");
 		}
 		else{
 			$user = $result->fetch_assoc();
@@ -27,7 +27,7 @@
 			}
 			else {
 			    echo '<script>alert("You have entered the wrong password, try again!")</script>';
-			    header("location: /views/login.php");
+			    header("Refresh:0");
             }
 		}
 	}
