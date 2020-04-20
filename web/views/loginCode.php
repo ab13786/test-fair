@@ -8,7 +8,8 @@
 		session_start();
 	
 		$email = $con->escape_string($_POST['Email']);
-		$sql = "SELECT * FROM applications.users WHERE id="'24'"";
+		$id = 24;
+		$sql = "SELECT * FROM applications.users WHERE (`id`=$id)";
 		$result = $con->query($sql);
 		
 		if($result->num_rows==0){
@@ -25,7 +26,6 @@
 				header("location: /views/main.html");
 			}
 			else {
-			    echo "<script type='text/javascript'>alert('You have entered the wrong password, try again!');</script>";
 				$_SESSION['message'] = "You have entered the wrong password, try again!";
 				header("location: /views/error.php");
 			}
