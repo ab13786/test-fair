@@ -138,3 +138,14 @@ fieldset{
   border: 1px solid #ccc;
   border-top: none;
 }
+
+
+
+/* table syling */
+div.tabcontent{
+    background-color:beige;
+}
+
+table, th, td{
+    border: 1px solid #0099FF;
+}
