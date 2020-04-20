@@ -48,7 +48,7 @@
             <button class="btn" value="download"><i class="fa fa-download"></i><a href="/views/download.php" style="color:white; text-decoration:none;"> Download</a></button>
 
             <section style="clear:both;">
-                <h1>Query for all lego applications in database</h1>
+                <h1>Lego Applications</h1>
                 <?php
                     $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
                     $port = "3306";
@@ -76,7 +76,7 @@
         <div id="parade" class="tabcontent">
             <button class="btn"><i class="fa fa-download"></i><a href="/views/download2.php" style="color:white; text-decoration:none;"> Download</a></button>
             <section style="clear:both;">
-                <h1>Query for all parade applications in database</h1>
+                <h1>Parade Applications</h1>
 
                 <?php
                     $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";

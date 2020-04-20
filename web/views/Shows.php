@@ -45,7 +45,7 @@
         </script>
 
         <div id="all" class="tabcontent">
-            <h1>Query for all shows in database</h1>
+            <h1>All Shows</h1>
             <form action="" method="POST">
                 <label for = "del"> Delete Row: </label>
                 <input type="text" id="del" name="del" placeholder="Enter ID">
