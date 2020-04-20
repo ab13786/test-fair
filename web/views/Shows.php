@@ -47,7 +47,7 @@
         <div id="all" class="tabcontent">
             <h1>All Shows</h1>
             <form action="" method="POST">
-                <label for = "del"> Delete Row: </label>
+                <label for = "del" id="none"> Delete Row: </label>
                 <input type="text" id="del" name="del" placeholder="Enter ID">
 
                 <input type="submit" value="Delete" id="delete" name="delete" class="deletion">
