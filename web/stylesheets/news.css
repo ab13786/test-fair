@@ -177,3 +177,11 @@ table, td{
     width:auto;
     padding-left:50px;
 }
+
+#delete{
+    width:auto;
+}
+
+.notfirst:hover{
+    background-color:#f2f2f2;
+}
