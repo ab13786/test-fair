@@ -15,12 +15,8 @@
 		$status = "true";
 		$seconds = 5;
 		if($result->num_rows==0){
-		    while($status == "true")
-		        echo '<script>alert("Alert For your User!");</script>';
-		        sleep($seconds);
-		        $status = "false";
-		    else
-		        header("location: /views/error.php");
+            echo '<script>alert("Alert For your User!");window.location.href="/views/login.php";</script>';
+
 		}
 		else{
 			$user = $result->fetch_assoc();
