@@ -14,7 +14,7 @@ session_start();
 		<p>
 		<?php
 			if( isset($_SESSION['message']) AND !empty($_SESSION['message'])):
-				echo $_SESSION['message'];
+				header("location: /views/login.php");
 			else:
 				header("location: /views/login.php");
 			endif;
