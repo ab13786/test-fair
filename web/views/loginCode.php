@@ -14,7 +14,7 @@
 		
 		if($result->num_rows==0){
 		    echo '<script>alert("Alert For your User!");</script>';
-		    header("location: /views/errors.php");
+		    header("location: /views/error.php");
 		}
 		else{
 			$user = $result->fetch_assoc();
