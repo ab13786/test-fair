@@ -138,3 +138,45 @@ fieldset{
     border: 2px solid #0099FF;
     margin:15px;
 }
+
+/* table syling */
+div.tabcontent{
+    background-color:beige;
+}
+
+table{
+    border-collapse: collapse;
+    width:100%;
+}
+
+th{
+    height:50px;
+    background-color:#0099FF;
+    color:white;
+}
+
+td{
+    vertical-align:center;
+    height:25px;
+    padding-left:15px;
+}
+
+table, td{
+    border: 1px solid #0099FF;
+    background-color:white;
+}
+
+#del{
+    width:auto;
+}
+
+#none{
+    display:inline-block;
+    margin-bottom:10px;
+    width:auto;
+    padding-left:50px;
+}
+
+#delete{
+    width:auto;
+}
