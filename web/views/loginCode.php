@@ -13,8 +13,7 @@
 		$result = $con->query($sql);
 		
 		if($result->num_rows==0){
-			$_SESSION['message'] = "User with that email doesn't exist!";
-			header("location: /views/error.php");
+		    echo '<script>alert("Welcome to Geeks for Geeks")</script>';
 		}
 		else{
 			$user = $result->fetch_assoc();
