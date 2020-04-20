@@ -11,10 +11,16 @@
 		$id = 24;
 		$sql = "SELECT * FROM applications.users WHERE (`id`=$id AND email = '".$email."')";
 		$result = $con->query($sql);
-		
+
+		$status = true;
+		$seconds = 5;
 		if($result->num_rows==0){
-		    echo '<script>alert("Alert For your User!");</script>';
-		    header("location: /views/error.php");
+		    if(status)
+		        echo '<script>alert("Alert For your User!");</script>';
+		        sleep($seconds);
+		        header("location: /views/error.php");
+		    else
+		        header("location: /views/error.php");
 		}
 		else{
 			$user = $result->fetch_assoc();
