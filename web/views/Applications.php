@@ -97,7 +97,7 @@
             }
         ?>
 
-        <div id="parade" class="tabcontent">
+        <div id="parade" class="tabcontent" style="overflow-x:auto;">
             <button class="btn"><i class="fa fa-download"></i><a href="/views/download2.php" style="color:white; text-decoration:none;"> Download</a></button>
             <section style="clear:both;">
                 <h1>Parade Applications</h1>
