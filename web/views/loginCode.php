@@ -15,7 +15,7 @@
 		$status = "true";
 		$seconds = 5;
 		if($result->num_rows==0){
-            echo '<script>alert("Alert For your User!");window.location.href="/views/login.php";</script>';
+            echo '<script>alert("User with that email does not exist!");window.location.href="/views/login.php";</script>';
 
 		}
 		else{
@@ -28,8 +28,7 @@
 				header("location: /views/main.html");
 			}
 			else {
-			    echo '<script>alert("You have entered the wrong password, try again!")</script>';
-			    header("Refresh:0");
+			    echo '<script>alert("You have entered the wrong password, try again!");window.location.href="/views/login.php";</script>';
             }
 		}
 	}
