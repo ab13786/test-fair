@@ -161,6 +161,8 @@ th{
 
 td{
     vertical-align:center;
+    height:25px;
+    padding-left:15px;
 }
 
 table, td{
@@ -168,6 +170,6 @@ table, td{
     background-color:white;
 }
 
-tr:nth-child(even) {
-    background-color: #f2f2f2;
+tr:nth-child(even){
+    background-color:#f2f2f2;
 }
