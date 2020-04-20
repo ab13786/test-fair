@@ -101,7 +101,12 @@
             <button class="btn"><i class="fa fa-download"></i><a href="/views/download2.php" style="color:white; text-decoration:none;"> Download</a></button>
             <section style="clear:both;">
                 <h1>Parade Applications</h1>
+                <form action="" method="POST">
+                    <label for = "del"> Delete Row: </label>
+                    <input type="text" id="del2" name="del2" placeholder="Enter ID">
 
+                    <input type="submit" value="Delete" id="delete2" name="delete2" class="deletion">
+                </form>
                 <?php
                     $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
                     $port = "3306";
@@ -126,5 +131,23 @@
 
             </section>
         </div>
+
+        <?php
+            $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
+            $port = "3306";
+            $user = "fair_admin";
+            $password = "KiwanisClub";
+            $db = "applications";
+
+            if(isset($_POST['delete2'])){
+                $id = $_POST['del2'];
+
+                $con = new mysqli($host, $user, $password, $db);
+                $sql = "DELETE FROM applications.ParadeApp WHERE (`ParadeAppID` = $id);";
+                $results = $con->query($sql);
+
+                header("Refresh:0");
+            }
+        ?>
     </body>
 </html>
