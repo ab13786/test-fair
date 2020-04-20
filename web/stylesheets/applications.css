@@ -97,3 +97,29 @@ body header nav ul li {
 .btn:hover {
   background-color: RoyalBlue;
 }
+
+div.tabcontent{
+    background-color:beige;
+}
+
+table{
+    border-collapse: collapse;
+    width:100%;
+}
+
+th{
+    height:50px;
+    background-color:#0099FF;
+    color:white;
+}
+
+td{
+    vertical-align:center;
+    height:25px;
+    padding-left:15px;
+}
+
+table, td{
+    border: 1px solid #0099FF;
+    background-color:white;
+}
