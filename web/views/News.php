@@ -104,7 +104,7 @@
                     if($results->num_rows>0){
                         echo "<table><tr><th>newsID</th><th>subject</th><th>message</th></tr>";
                         while($row = $results->fetch_assoc()){
-                            echo "<tr><td>". $row['newsID']. "</td><td>". $row['subject']. "</td><td>". $row['message']. "</td></tr>";
+                            echo "<tr class='notfirst'><td>". $row['newsID']. "</td><td>". $row['subject']. "</td><td>". $row['message']. "</td></tr>";
                         }
                         echo "</table>";
                     }
