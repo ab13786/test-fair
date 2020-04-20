@@ -49,6 +49,12 @@
 
             <section style="clear:both;">
                 <h1>Lego Applications</h1>
+                <form action="" method="POST">
+                    <label for = "del"> Delete Row: </label>
+                    <input type="text" id="del" name="del" placeholder="Enter ID">
+
+                    <input type="submit" value="Delete" id="delete" name="delete" class="deletion">
+                </form>
                 <?php
                     $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
                     $port = "3306";
@@ -72,6 +78,24 @@
                 ?>
             </section>
         </div>
+
+        <?php
+            $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
+            $port = "3306";
+            $user = "fair_admin";
+            $password = "KiwanisClub";
+            $db = "applications";
+
+            if(isset($_POST['delete'])){
+                $id = $_POST['del'];
+
+                $con = new mysqli($host, $user, $password, $db);
+                $sql = "DELETE FROM applications.LegoApp WHERE (`LegoAppID` = $id);";
+                $results = $con->query($sql);
+
+                header("Refresh:0");
+            }
+        ?>
 
         <div id="parade" class="tabcontent">
             <button class="btn"><i class="fa fa-download"></i><a href="/views/download2.php" style="color:white; text-decoration:none;"> Download</a></button>
