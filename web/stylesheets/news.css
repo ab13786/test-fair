@@ -139,7 +139,7 @@ fieldset{
   border-top: none;
 }
 
-.del{
+#del{
     all:none;
 }
 
@@ -148,7 +148,20 @@ div.tabcontent{
     background-color:beige;
 }
 
+table{
+    border-collapse: collapse;
+    width:100%;
+}
+
+th{
+    height:50px;
+}
+
+td{
+    vertical-align:center;
+}
+
 table, th, td{
-    border: 0px solid #0099FF;
+    border: 1px solid #0099FF;
     background-color:white;
 }
