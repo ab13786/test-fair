@@ -100,16 +100,16 @@
                         <legend>Add Sponsor</legend>
 
                         <label for="name">Sponsor Name: </label>
-                        <input type="text" id="name" name="sponsorName">
+                        <input type="text" id="sponsorName" name="sponsorName">
 
                         <label for="title">Sponsor Level: </label>
-                        <input type="text" id="title" name="sponsorTitle">
+                        <input type="text" id="sponsorTitle" name="sponsorTitle">
 
                         <label for="image">Sponsor Logo: </label>
-                        <input type="file" id="image" name="sponsorLogo">
+                        <input type="file" id="sponsorLogo" name="sponsorLogo">
 
                         <section id="submitButtons">
-                            <input  id="submit" value ="Submit" type="submit" class="submission">
+                            <input  id="submit" value ="Submit" type="submit" name="submit" class="submission">
                         </section>
                     </fieldset>
                 </form>
