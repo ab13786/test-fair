@@ -127,10 +127,10 @@
             if(isset($_POST['submit'])){
                 $name = $_POST['sponsorName'];
                 $title = $_POST['sponsorTitle'];
-                //$logo = $_POST['sponsorLogo'];
+                $logo = $_POST['sponsorLogo'];
 
                 $con = new mysqli($host, $user, $password, $db);
-                $sql = "INSERT INTO `applications`.`Sponsors` (`sponsorName`, `sponsorTitle`) VALUES (" ."'". $name ."', '" .$title ."');";
+                $sql = "INSERT INTO `applications`.`Sponsors` (`sponsorName`, `sponsorTitle`, `sponsorLogo`) VALUES (" ."'". $name ."', '" .$title ."', '" .$logo ."');";
                 $results = $con->query($sql);
 
                 header("Refresh:0");
