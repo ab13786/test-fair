@@ -48,7 +48,7 @@
             <form action="" method="POST">
                 <label for = "del" id="none"> Delete Row: </label>
                 <input type="text" id="del" name="del" placeholder="Enter ID">
-                <p>Note: Images larger than 65kb will display improperly.</p>
+
 
                 <input type="submit" value="Delete" id="delete" name="delete" class="deletion">
             </form>
@@ -108,6 +108,7 @@
 
                         <label for="image">Sponsor Logo: </label>
                         <input type="file" id="sponsorLogo" name="sponsorLogo">
+                        <p>Note: Image file sizes larger than 65kb will display improperly.</p>
 
                         <section id="submitButtons">
                             <input  id="submit" value ="Submit" type="submit" name="submit" class="submission">
