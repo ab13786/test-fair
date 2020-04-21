@@ -73,6 +73,7 @@
                     $con->close();
                 ?>
         </div>
+
          <?php
             $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
             $port = "3306";
@@ -94,12 +95,15 @@
 
         <div id="add" class="tabcontent">
             <section>
-                <form>
+                <form action="" method="POST">
                     <fieldset>
                         <legend>Add Sponsor</legend>
 
                         <label for="name">Sponsor Name: </label>
                         <input type="text" id="name" name="sponsorName">
+
+                        <label for="title">Sponsor Level: </label>
+                        <input type="text" id="title" name="sponsorTitle">
 
                         <label for="image">Sponsor Logo: </label>
                         <input type="file" id="image" name="sponsorLogo">
@@ -112,5 +116,26 @@
                 <br>
             </section>
         </div>
+
+        <?php
+            $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
+            $port = "3306";
+            $user = "fair_admin";
+            $password = "KiwanisClub";
+            $db = "applications";
+
+            if(isset($_POST['submit'])){
+                $name = $_POST['sponsorName'];
+                $title = $_POST['sponsorTitle'];
+                $logo = addslashes(file_get_contents($_POST['sponsorLogo']['logo']));
+
+                $con = new mysqli($host, $user, $password, $db);
+                $sql = "INSERT INTO `applications`.`Sponsors` (`sponsorName`, `sponsorTitle`, `sponsorLogo`) VALUES (" ."'". $name ."', '" .$title ."', '" .$logo ."');";
+                $results = $con->query($sql);
+
+                header("Refresh:0");
+            }
+        ?>
+
     </body>
 </html>
