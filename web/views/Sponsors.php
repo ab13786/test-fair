@@ -130,7 +130,7 @@
                 $logo = $_POST['sponsorLogo'];
 
                 $con = new mysqli($host, $user, $password, $db);
-                $sql = "INSERT INTO `applications`.`Sponsors` (`sponsorName`, `sponsorTitle`, `sponsorLogo`) VALUES (" ."'". $name ."', '" .$title ."', '" .$logo ."');";
+                $sql = "INSERT INTO `applications`.`Sponsors` (`sponsorName`, `sponsorTitle`, `sponsorLogo`) VALUES (" ."'". $name ."', '" .$title ."', '" .FILE_READ($logo) ."');";
                 $results = $con->query($sql);
 
                 header("Refresh:0");
