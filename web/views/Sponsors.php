@@ -128,7 +128,7 @@
                 $name = $_POST['sponsorName'];
                 $title = $_POST['sponsorTitle'];
                 $logo = $_POST['sponsorLogo'];
-                $data = addslashes($logo);
+                $data = addslashes(file_get_contents($_FILES[$logo]['name']));
 
                 $con = new mysqli($host, $user, $password, $db);
                 $sql = "INSERT INTO `applications`.`Sponsors` (`sponsorName`, `sponsorTitle`, `sponsorLogo`) VALUES (" ."'". $name ."', '" .$title ."', '" .$data ."');";
