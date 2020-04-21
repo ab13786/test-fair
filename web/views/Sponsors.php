@@ -123,16 +123,23 @@
             $user = "fair_admin";
             $password = "KiwanisClub";
             $db = "applications";
+            $con = new mysqli($host, $user, $password, $db);
 
             if(isset($_POST['submit'])){
-                $name = $_POST['sponsorName'];
+                $nameCo = $_POST['sponsorName'];
                 $title = $_POST['sponsorTitle'];
-                $logo = $_POST['sponsorLogo'];
-                $data = addslashes(file_get_contents($_FILES[$logo]['name']));
+                $name = $_FILES['sponsorLogo']['name'];
+                $type = $_FILES['sponsorLogo']['type'];
+                $data = file_get_contents($_FILES['sponsorLogo']['tmp_name'])
+                $stnt = $con->prepare("insert into applications.Sponsors values (''," .$nameCo .",".$title .",?)");
+                $stmt->bindParam(1,$name);
+                $stmt->bindParam(2,$type);
+                $stmt->bindParam(3,$data);
+                $stmt->execute();
 
-                $con = new mysqli($host, $user, $password, $db);
-                $sql = "INSERT INTO `applications`.`Sponsors` (`sponsorName`, `sponsorTitle`, `sponsorLogo`) VALUES (" ."'". $name ."', '" .$title ."', '" .$data ."');";
-                $results = $con->query($sql);
+
+                //$sql = "INSERT INTO `applications`.`Sponsors` (`sponsorName`, `sponsorTitle`, `sponsorLogo`) VALUES (" ."'". $nameCo ."', '" .$title ."', '" .$data ."');";
+                //$results = $con->query($sql);
 
                 header("Refresh:0");
             }
