@@ -48,6 +48,7 @@
             <form action="" method="POST">
                 <label for = "del" id="none"> Delete Row: </label>
                 <input type="text" id="del" name="del" placeholder="Enter ID">
+                <p>Note: Images larger than 65kb will display improperly.</p>
 
                 <input type="submit" value="Delete" id="delete" name="delete" class="deletion">
             </form>
