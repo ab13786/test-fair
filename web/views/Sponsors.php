@@ -123,23 +123,15 @@
             $user = "fair_admin";
             $password = "KiwanisClub";
             $db = "applications";
-            $con = new mysqli($host, $user, $password, $db);
 
             if(isset($_POST['submit'])){
-                $nameCo = $_POST['sponsorName'];
+                $name = $_POST['sponsorName'];
                 $title = $_POST['sponsorTitle'];
-                $name = $_FILES['sponsorLogo']['name'];
-                $type = $_FILES['sponsorLogo']['type'];
-                $data = file_get_contents($_FILES['sponsorLogo']['tmp_name'])
-                $stnt = $con->prepare("insert into applications.Sponsors values (''," .$nameCo .",".$title .",?)");
-                $stmt->bindParam(1,$name);
-                $stmt->bindParam(2,$type);
-                $stmt->bindParam(3,$data);
-                $stmt->execute();
+                //$logo = $_POST['sponsorLogo'];
 
-
-                //$sql = "INSERT INTO `applications`.`Sponsors` (`sponsorName`, `sponsorTitle`, `sponsorLogo`) VALUES (" ."'". $nameCo ."', '" .$title ."', '" .$data ."');";
-                //$results = $con->query($sql);
+                $con = new mysqli($host, $user, $password, $db);
+                $sql = "INSERT INTO `applications`.`Sponsors` (`sponsorName`, `sponsorTitle`, `sponsorLogo`) VALUES (" ."'". $name ."', '" .$title ."');";
+                $results = $con->query($sql);
 
                 header("Refresh:0");
             }
