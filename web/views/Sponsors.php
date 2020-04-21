@@ -128,9 +128,10 @@
                 $name = $_POST['sponsorName'];
                 $title = $_POST['sponsorTitle'];
                 $logo = $_POST['sponsorLogo'];
+                $data = addSlashes($logo);
 
                 $con = new mysqli($host, $user, $password, $db);
-                $sql = "INSERT INTO `applications`.`Sponsors` (`sponsorName`, `sponsorTitle`, `sponsorLogo`) VALUES (" ."'". $name ."', '" .$title ."', '" .$logo ."');";
+                $sql = "INSERT INTO `applications`.`Sponsors` (`sponsorName`, `sponsorTitle`, `sponsorLogo`) VALUES (" ."'". $name ."', '" .$title ."', '" .$data ."');";
                 $results = $con->query($sql);
 
                 header("Refresh:0");
