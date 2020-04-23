@@ -28,25 +28,7 @@
 
                     <center><p style="text-align:center;"><h2>Fairgrounds Map</h2></p></center>
 
-                    <?php
-                        $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
-                        $port = "3306";
-                        $user = "fair_admin";
-                        $password = "KiwanisClub";
-                        $db = "applications";
 
-                        $con = new mysqli($host, $user, $password, $db);
-                        $sql = "SELECT * From applications.mapInfo";
-                        $results = $con->query($sql);
-
-                        if($results->num_rows>0){
-                            $name = $row['name'];
-                            $long = $row['longitude'];
-                            $lat = $row['latitude'];
-                            
-                        }
-                        $con->close();
-                    ?>
 
 					<!--div to hold the map. -->
 					<div id="map" style="width:100%;height:500px;"></div>
