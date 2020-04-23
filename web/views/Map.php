@@ -43,7 +43,7 @@
                             $name = $row['name'];
                             $long = $row['longitude'];
                             $lat = $row['latitude'];
-                            echo "<script> "
+                            
                         }
                         $con->close();
                     ?>
