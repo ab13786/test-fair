@@ -1,10 +1,9 @@
-//location for the map to open. fair for center.
-var fairLoc = {lat: 32.395958,lng: -81.753546};
-//creates a google map with fair location.
-var map = new google.maps.Map(document.getElementById("map"), {zoom: 17, center: fairLoc,  mapTypeId: 'satellite'});
-
 // function to initiallize map.(
 function initMap() {
+    //location for the map to open. fair for center.
+    var fairLoc = {lat: 32.395958,lng: -81.753546};
+    //creates a google map with fair location.
+    var map = new google.maps.Map(document.getElementById("map"), {zoom: 17, center: fairLoc,  mapTypeId: 'satellite'});
     //gives the map a listener to when someone clicks to add a marker.
     map.addListener('click', function(e) {
     //prompts the user to enter a name for the location.
