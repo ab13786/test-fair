@@ -51,7 +51,7 @@
                         $db = "applications";
 
                         $con = new mysqli($host, $user, $password, $db);
-                        $sql = "SELECT * From applications.mapInfo";
+                        $sql = "SELECT * From applications.mapInfo;";
                         $results = $con->query($sql);
 
 
