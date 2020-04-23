@@ -55,9 +55,11 @@
                         $results = $con->query($sql);
 
                         if($results->num_rows>0){
-                            $name = $row['name'];
-                            $spot = $row['latLng'];
-                            echo "<script>alert('". $name . "');</script>";
+                            while($row = $results->fetch_assoc()){
+                                $name = $row['name'];
+                                $spot = $row['latLng'];
+                                echo "<script>alert('". $name . "');</script>";
+                            }
                         }
                         $con->close();
                     ?>
