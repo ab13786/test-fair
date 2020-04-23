@@ -58,11 +58,10 @@
                             while($row = $results->fetch_assoc()){
                                 $name = $row['name'];
                                 $spot = $row['latLng'];
+                                $map = $row['map'];
                                 echo "<script>";
-                                    echo "alert('name: " . $name. " spot: " . $spot . "');";
-                                    //echo "var fairLoc = {lat: 32.395958,lng: -81.753546};";
-                                    //echo "var map = new google.maps.Map(document.getElementById('map'), {zoom: 17, center: fairLoc,  mapTypeId: 'satellite'});";
-                                    //echo "addMarker(" .$spot . ", map, ". $name.");";
+                                    echo "alert('name: " . $name. " spot: " . $spot . ". $map . "');";
+                                    //echo "addMarker(" .$spot . ", " . $map .", ". $name.");";
                                 echo "</script>";
                             }
                         }
