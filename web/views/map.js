@@ -1,4 +1,4 @@
-var map = new google.maps.Map(document.getElementById("map"), {zoom: 17, center: {lat: 32.395958,lng: -81.753546},  mapTypeId: 'satellite'});
+var map = google.maps.Map(document.getElementById("map"), {zoom: 17, center: {lat: 32.395958,lng: -81.753546},  mapTypeId: 'satellite'});
 
 // function to initiallize map.(
 function initMap() {
