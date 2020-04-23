@@ -58,7 +58,7 @@
                             while($row = $results->fetch_assoc()){
                                 $name = $row['name'];
                                 $spot = $row['latLng'];
-                                echo "<script>alert('". $name . "');</script>";
+                                echo "<script>alert('name is ". $name . "');</script>";
                             }
                         }
                         $con->close();
