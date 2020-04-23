@@ -43,6 +43,29 @@
                         initMap();
                     </script>
 
+                    <?php
+                        $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
+                        $port = "3306";
+                        $user = "fair_admin";
+                        $password = "KiwanisClub";
+                        $db = "applications";
+
+                        $con = new mysqli($host, $user, $password, $db);
+                        $sql = "SELECT * From applications.mapInfo";
+                        $results = $con->query($sql);
+
+                        if($results->num_rows>0){
+                            $name = $row['name'];
+                            $spot = $row['latLng'];
+                            echo "<script>";
+                                echo "var fairLoc = {lat: 32.395958,lng: -81.753546};";
+                                echo "var map = new google.maps.Map(document.getElementById('map'), {zoom: 17, center: fairLoc,  mapTypeId: 'satellite'});";
+                                echo "addMarker(" .$spot . ", map, ". $name.");";
+                            echo "</script>";
+                        }
+                        $con->close();
+                    ?>
+
                 </fieldset>
         </section>
     </body>
