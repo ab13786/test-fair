@@ -10,7 +10,7 @@ function initMap() {
     var name = prompt('Location name:');
     //this calls the function that add Marker to the map.
     addMarker(e.latLng, map, name);
-    addMarker({lat: 32.394424}, map, "Entrance/Exit");
+    addMarker({lat: 32.394424, lng:-81.752965}, map, "Entrance/Exit");
     });
 
     //will need code to get position and name from database.
