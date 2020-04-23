@@ -59,8 +59,9 @@
                             while($row = $results->fetch_assoc()){
                                 $name = $row['name'];
                                 $spot = $row['latLng'];
+                                $map = $row['map'];
                                     echo "<script>";
-                                    echo "addMarker(" .$spot . ", map, ". $name.");";
+                                    echo "addMarker(" .$spot . ", ".$map .", '". $name."');";
                                     echo "</script>";
                             }
                         }
