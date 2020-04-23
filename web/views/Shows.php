@@ -24,7 +24,7 @@
         <div class="tab">
             <button class="tablinks" onclick="opentab(event,'all')">All Shows</button>
             <button class="tablinks" onclick="opentab(event,'add')">Add Shows</button>
-            <button class="tablinks" onclick="opentab(event,'attendance')">Attendance</button>
+             <!-- <button class="tablinks" onclick="opentab(event,'attendance')">Attendance</button> -->
         </div>
 
             <script>
