@@ -9,7 +9,7 @@ function initMap() {
     //prompts the user to enter a name for the location.
     var name = prompt('Location name:');
     //this calls the function that add Marker to the map.
-    //addMarker({lat: 32.394424,lng:-81.752965}, new google.maps.Map(document.getElementById("map"), {zoom: 17, center: {lat: 32.395958,lng: -81.753546},  mapTypeId: 'satellite'}), "Entrance/Exit");
+    addMarker({lat: 32.394424,lng:-81.752965}, new google.maps.Map(document.getElementById("map"), {zoom: 17, center: {lat: 32.395958,lng: -81.753546},  mapTypeId: 'satellite'}), "Entrance/Exit");
     addMarker(e.latLng, map, name);
     });
 
