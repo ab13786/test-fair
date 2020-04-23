@@ -6,7 +6,7 @@
 
         <link rel="stylesheet" type="text/css" href="/stylesheets/map.css">
 
-       <!-- <script src="/views/map.js"></script> -->
+        <script src="/views/map.js"></script>
     </head>
     <body>
         <header>
@@ -39,9 +39,9 @@
 							  type="text/javascript"></script>
 
                     <!--script for map. -->
-                    <!-- <script> -->
-                     //   initMap();
-                    <!--</script> -->
+                     <script>
+                        initMap();
+                     </script>
 
                     <?php
                         $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
@@ -54,68 +54,16 @@
                         $sql = "SELECT * From applications.mapInfo";
                         $results = $con->query($sql);
 
-                        echo "<script>";
-                            echo "function initMap() {";
-                                //location for the map to open. fair for center.
-                                 echo "var fairLoc = {lat: 32.395958,lng: -81.753546};";
-                                //creates a google map with fair location.
-                                echo "var map = new google.maps.Map(document.getElementById("map"), {zoom: 17, center: fairLoc,  mapTypeId: 'satellite'});";
-                                //gives the map a listener to when someone clicks to add a marker.
-                                echo "map.addListener('click', function(e) {";
-                                //prompts the user to enter a name for the location.
-                                echo "var name = prompt('Location name:');";
 
                         if($results->num_rows>0){
                             while($row = $results->fetch_assoc()){
                                 $name = $row['name'];
                                 $spot = $row['latLng'];
+                                    echo "<script>";
                                     echo "addMarker(" .$spot . ", map, ". $name.");";
+                                    echo "</script>";
                             }
                         }
-                            echo "addMarker(e.latLng, map, name);";
-                            echo "});";
-
-                             echo "function addMarker(latLng, map, name) {";
-
-                            //places a marker with location fom click.
-                             echo "var marker = new google.maps.Marker({";
-                             echo "position: latLng,";
-                             echo "map: map,";
-                             echo "draggable: true";
-                         echo "});";
-                            //moves center of map to the new marker.
-                             echo "map.panTo(latLng);";
-                            //adds an info window to the marker. gives the location a name.
-                             echo "marker.info = new google.maps.InfoWindow({";
-                             echo "content: '<h2>' + name + '</h2>'";
-                             echo "});";
-
-                            //this is an event listener for double clicking a marker.
-                             echo "google.maps.event.addListener(marker, 'dblclick', function() {";
-                            //prompts user to change name of marker. (this will need to be saved when changed.)
-                             echo "name = prompt('Location Name:')";
-                             echo "marker.info.setContent('<h2>' + name + '</h2>');";
-                             echo "});";
-
-                            //event listener to right click to delete marker.
-                             echo "google.maps.event.addListener(marker, 'rightclick', function() {";
-                            //if user says okay to prompt, marker will be deleted.
-                             echo "if(confirm("Do you want to delete marker?"))";
-                                 echo "marker.setMap(null);";
-                                //code to remove marker form database.
-                             echo "});";
-
-                            //mouseover marker info window pops up.
-                             echo "google.maps.event.addListener(marker, 'mouseover', function() {";
-                             echo "marker.info.open(map, marker);";
-                             echo "});";
-
-                            //moveout marker to close info window.
-                             echo "google.maps.event.addListener(marker, 'mouseout', function() {";
-                             echo "marker.info.close(map, marker);";
-                             echo "});";
-                        }
-                        echo "</script>";
                         $con->close();
                     ?>
 
