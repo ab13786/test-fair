@@ -108,14 +108,18 @@
 
                     <label for = "name"> Name: </label>
                     <input type="text" id="name" name="name" placeholder="Enter Name">
+                    <br>
 
                     <textarea  id="text" name="description" placeholder="Enter description here"></textarea>
-
+                    <br>
+                    
                     <label for = "requirements"> Height Requirement (inches): </label>
                     <input type="number" id="requirements" name="requirements">
+                    <br>
 
                     <label for = "tickets"> Ticket Cost: </label>
                     <input type="number" id="tickets" name="tickets">
+                    <br>
 
                     <section id="submitButtons">
                         <input  name="submit" id="submit" value ="Send" type="submit" class="submission">
