@@ -82,6 +82,24 @@
                 ?>
         </div>
 
+        <?php
+            $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
+            $port = "3306";
+            $user = "fair_admin";
+            $password = "KiwanisClub";
+            $db = "applications";
+
+            if(isset($_POST['delete'])){
+                $id = $_POST['del'];
+
+                $con = new mysqli($host, $user, $password, $db);
+                $sql = "DELETE FROM applications.rides WHERE (`rideID` = $id);";
+                $results = $con->query($sql);
+
+                header("Refresh:0");
+            }
+        ?>
+
         <div id="addRides" class="tabcontent">
             <h1>Add Food</h1>
         </div>
