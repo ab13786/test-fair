@@ -61,9 +61,9 @@
                     echo $name;
                     $con->close();
                 ?>
-            ''];
+            'ignore'];
 
-            var spot = [
+            var lat = [
                 <?php
                     $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
                     $port = "3306";
@@ -78,13 +78,36 @@
 
                     if($results->num_rows>0){
                         while($row = $results->fetch_assoc()){
-                            $latLng.= "'". $row['latLng'] . "',";
+                            $lat.= "'". $row['lat'] . "',";
                         }
                     }
-                    echo $latLng;
+                    echo $lat;
                     $con->close();
                 ?>
-            '{lat:00.000000,lng:00.000000}'];
+            '00.000000'];
+
+            var lng = [
+                <?php
+                    $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
+                    $port = "3306";
+                    $user = "fair_admin";
+                    $password = "KiwanisClub";
+                    $db = "applications";
+
+                    $con = new mysqli($host, $user, $password, $db);
+                    $sql = "SELECT * From applications.mapInfo;";
+                    $results = $con->query($sql);
+                    $name = "";
+
+                    if($results->num_rows>0){
+                        while($row = $results->fetch_assoc()){
+                            $lng.= "'". $row['lng'] . "',";
+                        }
+                    }
+                    echo $lng;
+                    $con->close();
+                ?>
+            '00.000000'];
 
             // function to initiallize map.(
             function initMap() {
@@ -97,7 +120,7 @@
 
 
                         for (var count = 0; count < title.length - 1; count++){
-                            addMarker(title[count], map, spot[count]);
+                            addMarker({lat:parseFloat(lat[count]),lng:parseFloat(lng[count])}, map, title[count]);
                         }
                 //gives the map a listener to when someone clicks to add a marker.
                 map.addListener('click', function(e) {
