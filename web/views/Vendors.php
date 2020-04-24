@@ -47,8 +47,8 @@
         <div id="allFood" class="tabcontent">
             <h1>Query for all Food Vendors in database</h1>
             <form action="" method="POST">
-                <label for = "del2" id="none"> Delete Row: </label>
-                <input type="text" id="del2" name="del2" placeholder="Enter ID">
+                <label for = "del" id="none"> Delete Row: </label>
+                <input type="text" id="del" name="del2" placeholder="Enter ID">
 
                 <input type="submit" value="Delete" id="delete" name="delete2" class="deletion">
             </form>
