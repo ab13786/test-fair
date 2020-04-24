@@ -74,7 +74,7 @@
                     if($results->num_rows>0){
                         echo "<table><tr><th>rideID</th><th>Name</th><th>Description</th><th>Height Requirement</th><th>Tickets</th></tr>";
                         while($row = $results->fetch_assoc()){
-                            echo "<tr class='notfirst'><td>". $row['ridesID']. "</td><td>". $row['name']. "</td><td>". $row['description']. "</td><td>". $row['requirements']. "</td><td>". $row['tickets']. "</td></tr>";
+                            echo "<tr class='notfirst'><td>". $row['rideID']. "</td><td>". $row['name']. "</td><td>". $row['description']. "</td><td>". $row['requirements']. "</td><td>". $row['tickets']. "</td></tr>";
                         }
                         echo "</table>";
                     }
