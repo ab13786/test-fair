@@ -78,13 +78,13 @@
 
                     if($results->num_rows>0){
                         while($row = $results->fetch_assoc()){
-                            $latLng.= "'". $row['latLng']  . "',";
+                            $latLng.= "'{lat:". parseFloat($row['lat'])  . ",lng:" . parseFloat($row['lng'])."}',";
                         }
                     }
                     echo $latLng;
                     $con->close();
                 ?>
-            ''];
+            '{lat:00.000000,lng:00.000000}'];
 
             // function to initiallize map.(
             function initMap() {
