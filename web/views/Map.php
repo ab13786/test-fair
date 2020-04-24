@@ -121,7 +121,7 @@
                 ?>
             ''];
 
-            alert(test . " ". test2);
+            alert(test2);
         </script>
     </body>
 </html>
