@@ -21,9 +21,10 @@
         </header>
 
         <div class="tab">
-            <button class="tablinks" onclick="opentab(event,'all')">All Vendors</button>
-            <button class="tablinks" onclick="opentab(event,'verify')">Verify Vendors</button>
-            <button class="tablinks" onclick="opentab(event,'message')">Message Vendors</button>
+            <button class="tablinks" onclick="opentab(event,'allFood')">All Food</button>
+            <button class="tablinks" onclick="opentab(event,'addFood')">Add Food</button>
+            <button class="tablinks" onclick="opentab(event,'AllRides')">All Rides</button>
+            <button class="tablinks" onclick="opentab(event,'addRides')">Add Rides</button>
         </div>
 
         <script>
@@ -43,96 +44,21 @@
             }
         </script>
 
-        <div id="all" class="tabcontent">
-            <h1>Query for all vendors in database</h1>
+        <div id="allFood" class="tabcontent">
+            <h1>Query for all Food Vendors in database</h1>
         </div>
 
-        <div id="verify" class="tabcontent">
-            <section>
-                <fieldset>
-                    <legend>Verify Vendor</legend>
-
-                    <p>
-                        <strong>Vendor 1:</strong><br>
-                        <label>Yes
-                            <input name = "Option 1" type = "radio"
-                                value = "Yes"></label>
-                        <label>No
-                            <input name = "Option 1" type = "radio"
-                            value = "No"></label>
-                        <label for = "email">E-mail: ______________________</label>
-                        <label for = "email">Company Name: ______________________</label>
-                        <label for = "email">Type: ______________________</label>
-                    </p>
-
-                    <p>
-                        <strong>Vendor 2:</strong><br>
-                        <label>Yes
-                            <input name = "Option 2" type = "radio"
-                                value = "Yes"></label>
-                        <label>No
-                            <input name = "Option 2" type = "radio"
-                                value = "No"></label>
-                        <label for = "email">E-mail: ______________________</label>
-                        <label for = "email">Company Name: ______________________</label>
-                        <label for = "email">Type: ______________________</label>
-                    </p>
-
-                    <p>
-                        <strong>Vendor 3:</strong><br>
-                        <label>Yes
-                        <input name = "Option 3" type = "radio"
-                            value = "Yes"></label>
-                        <label>No
-                        <input name = "Option 3" type = "radio"
-                            value = "No"></label>
-                        <label for = "email">E-mail: ______________________</label>
-                        <label for = "email">Company Name: ______________________</label>
-                        <label for = "email">Type: ______________________</label>
-                    </p>
-
-                    <section id="submitButtons">
-                        <input  id="submit" value ="Verify" type="submit" class="submission">
-                    </section>
-                </fieldset>
-            </section>
+        <div id="addFood" class="tabcontent">
+            <h1>Add Food</h1>
         </div>
 
-        <div id="message" class="tabcontent">
-            <section>
-                <fieldset>
-                    <legend> Message Vendor</legend>
-                    <p>
-                        <label for = "VType"> Vendor type</label>
-                        <select id = "Vtype">
-                            <option value = "Vendor 1"> Vendor 1 </option>
-                            <option value = "Vendor 2"> Vendor 2 </option>
-                            <option value = "Vendor 3"> Vendor 3 </option>
-                        </select>
-                    </p>
-                    <p>
-                        <label for = "Vendor"> Vendor </label>
-                        <select id = "Vendor">
-                            <option value = "Vendor 1"> Vendor 1 </option>
-                            <option value = "Vendor 2"> Vendor 2 </option>
-                            <option value = "Vendor 3"> Vendor 3 </option>
-                        </select>
-                    </p>
-                    <p>
-                        <label for = "Subject"> Subject: </label>
-                        <input type="text" id="Subject" placeholder="Enter Subject">
-                    </p>
-                    <p>
-                        <textarea  id="text" placeholder="Enter message here"></textarea>
-                    </p>
-
-                    <section id="submitButtons">
-                        <input  id="submit" value ="Send" type="submit" class="submission">
-                    </section>
-                </fieldset>
-            </section>
+        <div id="allRides" class="tabcontent">
+            <h1>Query for all Rides in database</h1>
         </div>
 
+        <div id="addRides" class="tabcontent">
+            <h1>Add Food</h1>
+        </div>
 
     </body>
 </html>
