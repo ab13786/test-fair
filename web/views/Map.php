@@ -90,10 +90,10 @@
 
                     if($results->num_rows>0){
                         while($row = $results->fetch_assoc()){
-                            $name .= $row['name'] . ",";
+                            $name .= "'". $row['name']  . "',";
                         }
                     }
-                    echo "'. $name . ',";
+                    echo $name;
                     $con->close();
                 ?>
             ""];
