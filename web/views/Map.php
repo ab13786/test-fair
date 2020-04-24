@@ -65,7 +65,7 @@
                                 $m3 = $row['mapP3'];
                                     //echo "<script>alert('name: " .$name." spot: ".$spot." map: ".$m1."\"map\"".$m2."\"satellite\"".$m3."');</script>";
                                     //echo "<script>addMarker(" .$spot . ", " .$m1."\"map\"".$m2."\"satellite\"".$m3 .", '". $name."');</script>";
-                                    echo "<script>addMarker(" .$spot . ", " . $name.");</script>";
+                                    echo "<script>addMarker(" .$spot . ", '" . $name."');</script>";
 
                             }
                         }
