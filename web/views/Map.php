@@ -61,7 +61,7 @@
                                 $spot = $row['latLng'];
                                 $map = $row['map'];
                                     echo "<script>alert('name: " .$name." spot: ".$spot." map: ".$map."');</script>";
-                                    echo "<script>addMarker(" .$spot . ", '". $name."');</script>";
+                                    echo "<script>addMarker(" .$spot . ", " .$map  .", '". $name."');</script>";
                             }
                         }
                         $con->close();
