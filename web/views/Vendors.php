@@ -53,7 +53,7 @@
         </div>
 
         <div id="allRides" class="tabcontent">
-            <h1>Query for all Rides in database</h1>
+            <h1>All Rides</h1>
             <form action="" method="POST">
                 <label for = "del" id="none"> Delete Row: </label>
                 <input type="text" id="del" name="del" placeholder="Enter ID">
@@ -102,7 +102,47 @@
 
         <div id="addRides" class="tabcontent">
             <h1>Add Food</h1>
+            <form action="" method="POST">
+                <fieldset>
+                    <legend> Add Ride </legend>
+
+                    <label for = "name"> Name: </label>
+                    <input type="text" id="name" name="name" placeholder="Enter Name">
+
+                    <textarea  id="text" name="description" placeholder="Enter description here"></textarea>
+
+                    <label for = "requirements"> Height Requirement (inches): </label>
+                    <input type="number" id="requirements" name="requirements">
+
+                    <label for = "tickets"> Ticket Cost: </label>
+                    <input type="number" id="tickets" name="tickets">
+
+                    <section id="submitButtons">
+                        <input  name="submit" id="submit" value ="Send" type="submit" class="submission">
+                    </section>
+                </fieldset>
+            </form>
         </div>
 
+        <?php
+            $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
+            $port = "3306";
+            $user = "fair_admin";
+            $password = "KiwanisClub";
+            $db = "applications";
+
+            if(isset($_POST['submit'])){
+                $name = $_POST['name'];
+                $description = $_POST['description'];
+                $req = $_POST['requirements'];
+                $tickets = $_POST['tickets'];
+
+                $con = new mysqli($host, $user, $password, $db);
+                $sql = "INSERT INTO `applications`.`rides` (`name`, `description`, `requirements`, `tickets`) VALUES (" ."'". $name ."', '" .$description ."', '" .$req ."', '" .$tickets ."');";
+                $results = $con->query($sql);
+
+                header("Refresh:0");
+            }
+        ?>
     </body>
 </html>
