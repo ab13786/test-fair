@@ -27,7 +27,7 @@
                 <fieldset>
                     <legend>Fair Ground map</legend>
 
-                    <center><p style="text-align:center;"><h2>Fairgrounds Map</h2></p></center>
+
 
 
 
@@ -176,34 +176,7 @@
             }
                      </script>
 
-                    <?php
-                        $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
-                        $port = "3306";
-                        $user = "fair_admin";
-                        $password = "KiwanisClub";
-                        $db = "applications";
-
-                        $con = new mysqli($host, $user, $password, $db);
-                        $sql = "SELECT * From applications.mapInfo;";
-                        $results = $con->query($sql);
-
-
-                        if($results->num_rows>0){
-                            while($row = $results->fetch_assoc()){
-                                $name = $row['name'];
-                                $spot = $row['latLng'];
-                                $map = $row['map'];
-                                $m1 = $row['mapP1'];
-                                $m2 = $row['mapP2'];
-                                $m3 = $row['mapP3'];
-                                    //echo "<script>alert('name: " .$name." spot: ".$spot." map: ".$m1."\"map\"".$m2."\"satellite\"".$m3."');</script>";
-                                    //echo "<script>addMarker(" .$spot . ", " .$m1."\"map\"".$m2."\"satellite\"".$m3 .", '". $name."');</script>";
-                                    //echo "<script>addMarker(" .$spot . ", '" . $name."');</script>";
-
-                            }
-                        }
-                        $con->close();
-                    ?>
+                <p>Note: if map does not appear reload page.</p>
                 </fieldset>
         </section>
 
