@@ -93,7 +93,7 @@
                             $name .= $row['name'] . ",";
                         }
                     }
-                    echo $name;
+                    echo "'. $name . ',";
                     $con->close();
                 ?>
             ""];
