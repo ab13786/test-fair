@@ -40,7 +40,7 @@
                     <!--script for map. -->
                     <script>
 
-                                        var title = [
+             var title = [
                 <?php
                     $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
                     $port = "3306";
@@ -88,6 +88,7 @@
 
             // function to initiallize map.(
             function initMap() {
+                alert(spot);
                 //location for the map to open. fair for center.
                 var fairLoc = {lat: 32.395958,lng: -81.753546};
                 //creates a google map with fair location.
