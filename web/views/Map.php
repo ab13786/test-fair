@@ -5,7 +5,7 @@
         <title>Kiawanis Fair - Map</title>
 
         <link rel="stylesheet" type="text/css" href="/stylesheets/map.css">
-
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
         <script src="/views/map.js"></script>
     </head>
     <body>
