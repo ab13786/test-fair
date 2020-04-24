@@ -60,7 +60,10 @@
                                 $name = $row['name'];
                                 $spot = $row['latLng'];
                                 $map = $row['map'];
-                                    echo "<script>alert('name: " .$name." spot: ".$spot." map: ".$map."');</script>";
+                                $mapP1 = $row['m1'];
+                                $mapP1 = $row['m2'];
+                                $mapP1 = $row['m3'];
+                                    echo "<script>alert('name: " .$name." spot: ".$spot." map: ".$m1."'map'".$m2."'satellite'".$m3.");</script>";
                                     echo "<script>addMarker(" .$spot . ", " .$map  .", '". $name."');</script>";
                             }
                         }
