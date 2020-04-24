@@ -111,7 +111,6 @@
 
             // function to initiallize map.(
             function initMap() {
-                alert(spot);
                 //location for the map to open. fair for center.
                 var fairLoc = {lat: 32.395958,lng: -81.753546};
                 //creates a google map with fair location.
