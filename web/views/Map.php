@@ -5,6 +5,8 @@
         <title>Kiawanis Fair - Map</title>
 
         <link rel="stylesheet" type="text/css" href="/stylesheets/map.css">
+
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" type="text/javascript"></script>
         <script src="/views/map.js"></script>
     </head>
     <body>
