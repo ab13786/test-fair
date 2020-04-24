@@ -96,9 +96,32 @@
                     echo $name;
                     $con->close();
                 ?>
-            ""];
+            ''];
 
-            alert(test);
+            var test2 = [
+                <?php
+                    $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
+                    $port = "3306";
+                    $user = "fair_admin";
+                    $password = "KiwanisClub";
+                    $db = "applications";
+
+                    $con = new mysqli($host, $user, $password, $db);
+                    $sql = "SELECT * From applications.mapInfo;";
+                    $results = $con->query($sql);
+                    $name = "";
+
+                    if($results->num_rows>0){
+                        while($row = $results->fetch_assoc()){
+                            $latLng.= "'". $row['latLng']  . "',";
+                        }
+                    }
+                    echo $latLng;
+                    $con->close();
+                ?>
+            ''];
+
+            alert(test . " ". test2);
         </script>
     </body>
 </html>
