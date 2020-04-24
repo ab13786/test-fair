@@ -28,7 +28,7 @@ function addMarker(latLng, map, name) {
     draggable: true
 });
     //moves center of map to the new marker.
-    map.panTo(latLng);
+    //map.panTo(latLng);
     //adds an info window to the marker. gives the location a name.
     marker.info = new google.maps.InfoWindow({
     content: '<h2>' + name + '</h2>'
