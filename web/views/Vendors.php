@@ -50,7 +50,7 @@
                 <label for = "del2" id="none"> Delete Row: </label>
                 <input type="text" id="del2" name="del2" placeholder="Enter ID">
 
-                <input type="submit" value="Delete" id="delete2" name="delete2" class="deletion">
+                <input type="submit" value="Delete" id="delete" name="delete2" class="deletion">
             </form>
             <?php
                 $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
@@ -94,7 +94,41 @@
 
         <div id="addFood" class="tabcontent">
             <h1>Add Food</h1>
+            <form action="" method="POST">
+                <fieldset>
+                    <legend> Add Ride </legend>
+
+                    <label for = "name"> Name: </label>
+                    <input type="text" id="name" name="name" placeholder="Enter Name">
+                    <br>
+
+                    <textarea  id="text" name="description" placeholder="Enter description here"></textarea>
+                    <br>
+                    <section id="submitButtons">
+                        <input  name="submit2" id="submit" value ="Send" type="submit" class="submission">
+                    </section>
+                </fieldset>
+            </form>
         </div>
+
+        <?php
+            $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
+            $port = "3306";
+            $user = "fair_admin";
+            $password = "KiwanisClub";
+            $db = "applications";
+
+            if(isset($_POST['submit2'])){
+                $name = $_POST['name'];
+                $description = $_POST['description'];
+
+                $con = new mysqli($host, $user, $password, $db);
+                $sql = "INSERT INTO `applications`.`foodstalls` (`name`, `description`) VALUES (" ."'". $name ."', '" .$description ."');";
+                $results = $con->query($sql);
+
+                header("Refresh:0");
+            }
+        ?>
 
         <div id="allRides" class="tabcontent">
             <h1>All Rides</h1>
