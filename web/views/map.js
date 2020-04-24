@@ -19,12 +19,12 @@ function initMap() {
 }
 
 //function to add markers to map.(latLng needs to be saved to the database with name)
-function addMarker(latLng, map, name) {
+function addMarker(latLng, name) {
 
     //places a marker with location fom click.
     var marker = new google.maps.Marker({
     position: latLng,
-    map: map,
+    map: new google.maps.Map(document.getElementById("map"), {zoom: 17, center: {lat: 32.395958,lng: -81.753546},  mapTypeId: 'satellite'}),
     draggable: true
 });
     //moves center of map to the new marker.
