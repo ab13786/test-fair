@@ -65,7 +65,7 @@
                                 $m3 = $row['mapP3'];
                                     //echo "<script>alert('name: " .$name." spot: ".$spot." map: ".$m1."\"map\"".$m2."\"satellite\"".$m3."');</script>";
                                     //echo "<script>addMarker(" .$spot . ", " .$m1."\"map\"".$m2."\"satellite\"".$m3 .", '". $name."');</script>";
-                                    echo "<script>addMarker(" .$spot . ", '" . $name."');</script>";
+                                    //echo "<script>addMarker(" .$spot . ", '" . $name."');</script>";
 
                             }
                         }
@@ -74,54 +74,6 @@
                 </fieldset>
         </section>
 
-        <script>
-            var test = [
-                <?php
-                    $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
-                    $port = "3306";
-                    $user = "fair_admin";
-                    $password = "KiwanisClub";
-                    $db = "applications";
 
-                    $con = new mysqli($host, $user, $password, $db);
-                    $sql = "SELECT * From applications.mapInfo;";
-                    $results = $con->query($sql);
-                    $name = "";
-
-                    if($results->num_rows>0){
-                        while($row = $results->fetch_assoc()){
-                            $name .= "'". $row['name']  . "',";
-                        }
-                    }
-                    echo $name;
-                    $con->close();
-                ?>
-            ''];
-
-            var test2 = [
-                <?php
-                    $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
-                    $port = "3306";
-                    $user = "fair_admin";
-                    $password = "KiwanisClub";
-                    $db = "applications";
-
-                    $con = new mysqli($host, $user, $password, $db);
-                    $sql = "SELECT * From applications.mapInfo;";
-                    $results = $con->query($sql);
-                    $name = "";
-
-                    if($results->num_rows>0){
-                        while($row = $results->fetch_assoc()){
-                            $latLng.= "'". $row['latLng']  . "',";
-                        }
-                    }
-                    echo $latLng;
-                    $con->close();
-                ?>
-            ''];
-
-            alert(test2);
-        </script>
     </body>
 </html>
