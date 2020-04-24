@@ -78,7 +78,7 @@
 
                     if($results->num_rows>0){
                         while($row = $results->fetch_assoc()){
-                            $latLng.= "'{lat:". parseFloat($row['lat'])  . ",lng:" . parseFloat($row['lng'])."}',";
+                            $latLng.= "'". $row['latLng'] . "',";
                         }
                     }
                     echo $latLng;
