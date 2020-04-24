@@ -46,7 +46,51 @@
 
         <div id="allFood" class="tabcontent">
             <h1>Query for all Food Vendors in database</h1>
+            <form action="" method="POST">
+                <label for = "del2" id="none"> Delete Row: </label>
+                <input type="text" id="del2" name="del2" placeholder="Enter ID">
+
+                <input type="submit" value="Delete" id="delete2" name="delete2" class="deletion">
+            </form>
+            <?php
+                $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
+                $port = "3306";
+                $user = "fair_admin";
+                $password = "KiwanisClub";
+                $db = "applications";
+
+                $con = new mysqli($host, $user, $password, $db);
+                $sql = "SELECT * From applications.foodstalls";
+                $results = $con->query($sql);
+
+                if($results->num_rows>0){
+                    echo "<table><tr><th>foodstallID</th><th>Name</th><th>Description</th></tr>";
+                    while($row = $results->fetch_assoc()){
+                        echo "<tr class='notfirst'><td>". $row['foodstallID']. "</td><td>". $row['Name']. "</td><td>". $row['description']. "</td></tr>";
+                    }
+                    echo "</table>";
+                }
+                $con->close();
+            ?>
         </div>
+
+        <?php
+            $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
+            $port = "3306";
+            $user = "fair_admin";
+            $password = "KiwanisClub";
+            $db = "applications";
+
+            if(isset($_POST['delete2'])){
+                $id = $_POST['del2'];
+
+                $con = new mysqli($host, $user, $password, $db);
+                $sql = "DELETE FROM applications.foodstalls WHERE (`foodstallID` = $id);";
+                $results = $con->query($sql);
+
+                header("Refresh:0");
+            }
+        ?>
 
         <div id="addFood" class="tabcontent">
             <h1>Add Food</h1>
@@ -101,7 +145,6 @@
         ?>
 
         <div id="addRides" class="tabcontent">
-            <h1>Add Food</h1>
             <form action="" method="POST">
                 <fieldset>
                     <legend> Add Ride </legend>
@@ -112,7 +155,7 @@
 
                     <textarea  id="text" name="description" placeholder="Enter description here"></textarea>
                     <br>
-                    
+
                     <label for = "requirements"> Height Requirement (inches): </label>
                     <input type="number" id="requirements" name="requirements">
                     <br>
