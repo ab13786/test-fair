@@ -39,7 +39,9 @@
 							  type="text/javascript"></script>
 
                     <!--script for map. -->
-
+                    <script>
+                        initMap();
+                     </script>
 
                     <?php
                         $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
@@ -69,11 +71,6 @@
                         }
                         $con->close();
                     ?>
-
-                    <script>
-                        initMap();
-                     </script>
-
                 </fieldset>
         </section>
     </body>
