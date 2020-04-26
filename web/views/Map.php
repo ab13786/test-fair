@@ -179,10 +179,10 @@
                         <input type="text" id="name" name="name" placeholder="Enter Point Name">
 
                         <label for = "lat"> Latitude: </label>
-                        <input type="number" id="lat" name="lat" step="0.000000000000" max="1000000" min="-1000000">
+                        <input type="number" id="lat" name="lat" step="0.0000000000001" max="1000000" min="-1000000">
 
                         <label for = "long"> Longitude: </label>
-                        <input type="number" id="long" name="long" step="0.000000000000" max="1000000" min="-1000000">
+                        <input type="number" id="long" name="long" step="0.0000000000001" max="1000000" min="-1000000">
 
                         <section id="submitButtons">
                             <input  name="submit" id="submit" value ="Send" type="submit" class="submission">
