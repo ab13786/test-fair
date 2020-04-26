@@ -49,10 +49,9 @@
 
 			//Content
 			$mail->isHTML(true);
-			$mail->addAddress($email, '');
+			$mail->addAddress($to, '');
 			$mail->Subject = $subject;
 			$mail->Body = $message_body;
-			$mail->
 
 			$mail->send();
 
