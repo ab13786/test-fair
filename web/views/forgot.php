@@ -16,7 +16,10 @@
                     <legend>Reset Your Password</legend>
 
                     <label for="userEmail">E-mail</label>
-                    <input type="text" name="Email" id="userEmail">
+                    <input type="text" name="Email" id="userEmail" placeholder="example@gmail.com">
+
+                    <label for="address"> Street Address</label>
+                    <input type="text" name="address" id="address" placeholder="Address">
 
                     <section id="submitButtons">
                         <input type="submit" name="Reset" value="Reset" class="submission">
