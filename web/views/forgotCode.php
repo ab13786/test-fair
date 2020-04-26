@@ -34,26 +34,7 @@
 			https://fathomless-citadel-34360.herokuapp.com/views/reset.php?email='".$email."'&hash='".$hash."'";
 			$headers = "Ogeechee Fair";
 		
-			//$mail = mail($to,$subject,$message_body,$headers);
-			$mail = new PHPMailer();
-
-            //settings
-			$mail->IsSMTP();
-			$mail->CharSet = 'UTF-8';
-			$mail->Host = 'smtp.sendgrid.net'; //SMTP server
-			$mail->SMTPDebug = 0;
-			$mail->SMTPAUth = true;
-			$mail->Port = 25;
-			$mail->Username = 'apikey';
-			$mail->Password = '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';
-
-			//Content
-			$mail->isHTML(true);
-			$mail->addAddress($to, '');
-			$mail->Subject = $subject;
-			$mail->Body = $message_body;
-
-			$mail->send();
+			$mail = mail($to,$subject,$message_body,$headers);
 
 			if($mail){
 			    echo '<script>alert("Email has been sent to that account.");window.location.href="/views/login.php";</script>';
