@@ -175,8 +175,8 @@
                 <fieldset>
                     <form action="" method="POST">
                         <legend>Add Point</legend>
-                        <label for = "name"> Point Name: </label>
-                        <input type="text" id="name" name="name" placeholder="Enter Point Name">
+                        <label for = "namePoint"> Point Name: </label>
+                        <input type="text" id="namePoint" name="namePoint" placeholder="Enter Point Name">
 
                         <label for = "lat"> Latitude: </label>
                         <input type="text" id="lat" name="lat" placeholder="numbers only">
@@ -185,7 +185,7 @@
                         <input type="text" id="long" name="long" placeholder="numbers only">
 
                         <section id="submitButtons">
-                            <input  name="submit" id="submit" value ="Send" type="submit" class="submission">
+                            <input  name="submit" id="submit" value ="Add Point" type="submit" class="submission">
                         </section>
                     </form>
                 </fieldset>
@@ -198,12 +198,12 @@
                         $db = "applications";
 
                         if(isset($_POST['submit'])){
-                            $name = $_POST['name'];
+                            $name = $_POST['namePoint'];
                             $lat = $_POST['lat'];
                             $long = $_POST['long'];
 
                             $con = new mysqli($host, $user, $password, $db);
-                            $sql = "INSERT INTO `applications`.`mapInfo` (`name`, `lat`, `lng`) VALUES (" ."'". $name ."', '" .$lat ."' " .$long ."');";
+                            $sql = "INSERT INTO `applications`.`mapInfo` (`name`, `lat`, `lng`) VALUES (" ."'". $name ."', '" .$lat ."' ,'" .$long ."');";
                             $results = $con->query($sql);
 
                             header("Refresh:0");
