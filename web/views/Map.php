@@ -206,11 +206,7 @@
                             $sql = "INSERT INTO `applications`.`mapInfo` (`name`, `lat`, `lng`) VALUES (" ."'". $name ."', '" .$lat ."' ,'" .$long ."');";
                             $results = $con->query($sql);
 
-                            $count = 0;
-                            while($count < 2){
-                                header("location: /views/Map.php");
-                                $count++;
-                            }
+                            header("location: /views/Map.php");
                         }
                     ?>
 
