@@ -206,7 +206,7 @@
                             $sql = "INSERT INTO `applications`.`mapInfo` (`name`, `lat`, `lng`) VALUES (" ."'". $name ."', '" .$lat ."' ,'" .$long ."');";
                             $results = $con->query($sql);
 
-                            header("Refresh:0");
+                            header("location: /views/Map.php");
                         }
                     ?>
 
@@ -216,7 +216,9 @@
                         <label for = "del" id="none"> Point Name: </label>
                         <input type="text" id="del" name="del" placeholder="Enter Point Name">
 
-                        <input type="submit" value="Delete Point" id="delete" name="delete" class="deletion">
+                        <section id="submitButtons">
+                            <input type="submit" value="Delete Point" id="delete" name="delete" class="deletion">
+                        </section>
                     </form>
                 </fieldset>
 
@@ -234,7 +236,7 @@
                         $sql = "SET SQL_SAFE_UPDATES=0;DELETE FROM applications.mapInfo WHERE (`name` = $namePoint);";
                         $results = $con->query($sql);
 
-                        header("Refresh:0");
+                        header("location: /views/Map.php");
                     }
                 ?>
         </section>
