@@ -14,8 +14,6 @@
 		
 		if( $result->num_rows ==0){
 		    echo '<script>alert("User with that email does not exist!");window.location.href="/views/forgot.php";</script>';
-			//$_SESSION['message']= "User with this email doesn't exist!";
-			//header("location: error.php");
 		}
 		else{
 			echo $sql;
@@ -37,6 +35,7 @@
 			$headers = "Ogeechee Fair";
 		
 			$mail = mail($to,$subject,$message_body,$headers);
+			mail($to,$subject,$message_body,$headers);
 			if($mail){
 			    echo '<script>alert("Email has been sent to that account.");window.location.href="/views/login.php";</script>';
 				//$_SESSION['message'] = "Your Password Reset Link has been sent to this email!";
@@ -44,8 +43,6 @@
 			}
 			else{
 			    echo '<script>alert("Email failed to send.");window.location.href="/views/forgot.php";</script>';
-				//_SESSION['message'] = "Mail sending failed.";
-				//header("location: /views/forgot.php");
 			}
 		}	
 	}
