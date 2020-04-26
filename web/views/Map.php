@@ -145,7 +145,7 @@
                 //map.panTo(latLng);
                 //adds an info window to the marker. gives the location a name.
                 marker.info = new google.maps.InfoWindow({
-                content: '<h2>' + name + ':' + latLng + '</h2>'
+                content: '<h2>' + name + ':' + JSON.stringify(latLng) + '</h2>'
                 });
 
                 //this is an event listener for double clicking a marker.
