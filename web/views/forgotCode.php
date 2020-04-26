@@ -9,7 +9,7 @@
 		
 		$email = $con->escape_string($_POST['Email']);
 		
-		$sql = "SELECT * FROM applications.users WHERE email = '".$email."'";
+		$sql = "SELECT * FROM applications.users WHERE (email = '".$email."')";
 		$result = $con->query($sql);
 		
 		if( $result->num_rows ==0){
