@@ -233,7 +233,7 @@
                         $namePoint = $_POST['del'];
 
                         $con = new mysqli($host, $user, $password, $db);
-                        $sql = "SET SQL_SAFE_UPDATES=0;DELETE FROM applications.mapInfo WHERE (`name` = $namePoint);";
+                        $sql = "DELETE FROM applications.mapInfo WHERE (`name` = $namePoint);";
                         $results = $con->query($sql);
 
                         header("location: /views/Map.php");
