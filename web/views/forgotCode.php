@@ -17,7 +17,7 @@
 		    echo '<script>alert("User with that email or address does not exist!");window.location.href="/views/forgot.php";</script>';
 		}
 		else{
-		    echo '<script>alert("You may now reset your password.");window.location.href="/views/reset.php"</script>';
+		    echo '<script>alert("You may now reset your password.");window.location.href="/views/reset.php?email='".$email."'&hash='".$hash."'"</script>';
 		}	
 	}
 ?>
