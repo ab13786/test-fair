@@ -26,7 +26,10 @@
                     </section>					
                 </fieldset>
             </form>
-
+            <br>
+            <form action = "/views/forgot.php" method ="post">
+				<input type = "submit" value ="Forgot Password?" class= "submission">
+			</form>
             <br>
         </section>
     </body>
