@@ -1,4 +1,6 @@
 <?php
+    require 'vendor/autoload.php';
+
 	if(isset($_POST['Reset'])){
 		$host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
 		$user ="fair_admin";
@@ -21,18 +23,31 @@
 			$email = $user['email'];
 			$hash = $user['hash'];
 			$first_name = $user['First_Name'];
-		
-			$to = $email;
-			$subject = 'Password Reset Link (Ogeechee Fair App)';
-			$message_body = "
-			You have reuqested a password reset!
-			Please Click this link to reset your password:
-			https://fathomless-citadel-34360.herokuapp.com/views/reset.php?email='".$email."'&hash='".$hash."'";
-			$headers = "Ogeechee Fair";
-		
-			//$mail = mail($to,$subject,$message_body,$headers);
 
-            $mail = true;
+			$from = new SendGrid\Email(null, "ab13786@georgiasouthern@gmail.com");
+			$subject =  'Password Reset Link (Ogeechee Fair App)';
+			$to = new SendGrid\Email(null, "tburkey17@gmail.com");
+			$content = new SendGrid\Content("text/plain", "test email");
+			$mail = new SendGrid\Mail($from, $subject, $to, $content);
+
+			$apiKey = getenv('SENDGRID_API_KEY');
+			$sg = new \SendGrid($apiKey);
+
+			$response = $sg->client->mail()->send()->post($mail);
+			echo $response->statusCode();
+			echo $response->headers();
+			echo $response->body();
+		
+// 			$to = $email;
+// 			$subject = 'Password Reset Link (Ogeechee Fair App)';
+// 			$message_body = "
+// 			You have reuqested a password reset!
+// 			Please Click this link to reset your password:
+// 			https://fathomless-citadel-34360.herokuapp.com/views/reset.php?email='".$email."'&hash='".$hash."'";
+// 			$headers = "Ogeechee Fair";
+//
+// 			$mail = mail($to,$subject,$message_body,$headers);
+
 			if($mail){
 			    echo '<script>alert("Email has been sent to that account.");window.location.href="/views/login.php";</script>';
 				//$_SESSION['message'] = "Your Password Reset Link has been sent to this email!";
