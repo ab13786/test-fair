@@ -116,11 +116,10 @@
                 //creates a google map with fair location.
                 var map = new google.maps.Map(document.getElementById("map"), {zoom: 17, center: fairLoc,  mapTypeId: 'satellite'});
 
+                for (var count = 0; count < title.length - 1; count++){
+                    addMarker({lat:parseFloat(lat[count]),lng:parseFloat(lng[count])}, map, title[count]);
+                }
 
-
-                        for (var count = 0; count < title.length - 1; count++){
-                            addMarker({lat:parseFloat(lat[count]),lng:parseFloat(lng[count])}, map, title[count]);
-                        }
                 //gives the map a listener to when someone clicks to add a marker.
                 map.addListener('click', function(e) {
                 //prompts the user to enter a name for the location.
@@ -146,7 +145,7 @@
                 //map.panTo(latLng);
                 //adds an info window to the marker. gives the location a name.
                 marker.info = new google.maps.InfoWindow({
-                content: '<h2>' + name + '</h2>'
+                content: '<h2>' + name + ':' + latLng '</h2>'
                 });
 
                 //this is an event listener for double clicking a marker.
@@ -174,7 +173,7 @@
                 marker.info.close(map, marker);
                 });
             }
-                     </script>
+                 </script>
 
                 <p>Note: if map does not appear reload page.</p>
                 </fieldset>
