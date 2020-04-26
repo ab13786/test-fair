@@ -206,7 +206,7 @@
                             $sql = "INSERT INTO `applications`.`mapInfo` (`name`, `lat`, `lng`) VALUES (" ."'". $name ."', '" .$lat ."' ,'" .$long ."');";
                             $results = $con->query($sql);
 
-                            header("location: /views/mapRedirect.php");
+                            header("Refresh:0");
                         }
                     ?>
 
@@ -236,7 +236,7 @@
                         $sql = "DELETE FROM applications.mapInfo WHERE name='$namePoint';";
                         $results = $con->query($sql);
 
-                        header("location: /views/mapRedirect.php");
+                        header("Refresh:0");
                     }
                 ?>
         </section>
