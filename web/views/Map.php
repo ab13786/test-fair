@@ -173,8 +173,42 @@
                 </fieldset>
 
                 <fieldset>
-                    <legend>Add Point</legend>
+                    <form action="" method="POST">
+                        <legend>Add Point</legend>
+                        <label for = "name"> Point Name: </label>
+                        <input type="text" id="name" name="name" placeholder="Enter Point Name">
+
+                        <label for = "lat"> Latitude: </label>
+                        <input type="number" id="lat" name="lat">
+
+                        <label for = "long"> Longitude: </label>
+                        <input type="number" id="long" name="long">
+
+                        <section id="submitButtons">
+                            <input  name="submit" id="submit" value ="Send" type="submit" class="submission">
+                        </section>
+                    </form>
                 </fieldset>
+
+                    <?php
+                        $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
+                        $port = "3306";
+                        $user = "fair_admin";
+                        $password = "KiwanisClub";
+                        $db = "applications";
+
+                        if(isset($_POST['submit'])){
+                            $name = $_POST['name'];
+                            $lat = $_POST['lat'];
+                            $long = $_POST['long'];
+
+                            $con = new mysqli($host, $user, $password, $db);
+                            $sql = "INSERT INTO `applications`.`mapInfo` (`name`, `lat`, `long`) VALUES (" ."'". $name ."', '" .$lat ."' " .$long ."');";
+                            $results = $con->query($sql);
+
+                            header("Refresh:0");
+                        }
+                    ?>
 
                 <fieldset>
                     <legend>Delete Point</legend>
