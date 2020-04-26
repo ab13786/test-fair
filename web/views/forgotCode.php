@@ -32,10 +32,10 @@
 			You have reuqested a password reset!
 			Please Click this link to reset your password:
 			https://fathomless-citadel-34360.herokuapp.com/views/reset.php?email='".$email."'&hash='".$hash."'";
+			$message_body = wordwrap($message_body, 70);
 			$headers = "Ogeechee Fair";
 		
 			$mail = mail($to,$subject,$message_body,$headers);
-			mail($to,$subject,$message_body,$headers);
 			if($mail){
 			    echo '<script>alert("Email has been sent to that account.");window.location.href="/views/login.php";</script>';
 				//$_SESSION['message'] = "Your Password Reset Link has been sent to this email!";
