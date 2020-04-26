@@ -1,6 +1,4 @@
 <?php
-    require 'vendor/autoload.php';
-
 	if(isset($_POST['Reset'])){
 		$host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
 		$user ="fair_admin";
