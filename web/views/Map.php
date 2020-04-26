@@ -173,8 +173,8 @@
                 </fieldset>
 
                 <fieldset>
+                <legend>Add Point</legend>
                     <form action="" method="POST">
-                        <legend>Add Point</legend>
                         <label for = "namePoint"> Point Name: </label>
                         <input type="text" id="namePoint" name="namePoint" placeholder="Enter Point Name">
 
@@ -212,7 +212,31 @@
 
                 <fieldset>
                     <legend>Delete Point</legend>
+                    <form action="" method="POST">
+                        <label for = "del" id="none"> Point Name: </label>
+                        <input type="text" id="del" name="del" placeholder="Enter Point Name">
+
+                        <input type="submit" value="Delete Point" id="delete" name="delete" class="deletion">
+                    </form>
                 </fieldset>
+
+                <?php
+                    $host = "ogeechee-fair.cyxvjubgt7cw.us-east-1.rds.amazonaws.com";
+                    $port = "3306";
+                    $user = "fair_admin";
+                    $password = "KiwanisClub";
+                    $db = "applications";
+
+                    if(isset($_POST['delete'])){
+                        $namePoint = $_POST['del'];
+
+                        $con = new mysqli($host, $user, $password, $db);
+                        $sql = "DELETE FROM applications.mapInfo WHERE (`name` = $namePoint);";
+                        $results = $con->query($sql);
+
+                        header("Refresh:0");
+                    }
+                ?>
         </section>
     </body>
 </html>
