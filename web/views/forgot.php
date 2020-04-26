@@ -8,10 +8,10 @@
     </head>
     <body>
         <header>
-            <img src="kiawanis-fair.jpeg" alt="Kiwanis Logo">
+            <img src="/images/kiawanis-fair.jpeg" alt="Kiwanis Logo">
         </header>
         <section>
-            <form action= "forgotCode.php" method = "POST">
+            <form action= "/views/forgotCode.php" method = "POST">
 				<input type = "submit" value ="Logout" class= "submission">
                 <fieldset>
                     <legend>Reset Your Password</legend>
