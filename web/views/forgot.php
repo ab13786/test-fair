@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>Kiwanis Fair - Password Reset</title>
 
-        <link href="login.css" type="text/css" rel="stylesheet">
+        <link href="/stylesheets/login.css" type="text/css" rel="stylesheet">
     </head>
     <body>
         <header>
@@ -12,7 +12,6 @@
         </header>
         <section>
             <form action= "/views/forgotCode.php" method = "POST">
-				<input type = "submit" value ="Logout" class= "submission">
                 <fieldset>
                     <legend>Reset Your Password</legend>
 
