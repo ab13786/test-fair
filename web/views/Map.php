@@ -179,10 +179,10 @@
                         <input type="text" id="name" name="name" placeholder="Enter Point Name">
 
                         <label for = "lat"> Latitude: </label>
-                        <input type="number" id="lat" name="lat" step="0.0000000000001" max="1000000" min="-1000000">
+                        <input type="text" id="lat" name="lat" placeholder="numbers only">
 
                         <label for = "long"> Longitude: </label>
-                        <input type="number" id="long" name="long" step="0.0000000000001" max="1000000" min="-1000000">
+                        <input type="text" id="long" name="long" placeholder="numbers only">
 
                         <section id="submitButtons">
                             <input  name="submit" id="submit" value ="Send" type="submit" class="submission">
@@ -203,7 +203,7 @@
                             $long = $_POST['long'];
 
                             $con = new mysqli($host, $user, $password, $db);
-                            $sql = "INSERT INTO `applications`.`mapInfo` (`name`, `lat`, `long`) VALUES (" ."'". $name ."', '" .$lat ."' " .$long ."');";
+                            $sql = "INSERT INTO `applications`.`mapInfo` (`name`, `lat`, `lng`) VALUES (" ."'". $name ."', '" .$lat ."' " .$long ."');";
                             $results = $con->query($sql);
 
                             header("Refresh:0");
