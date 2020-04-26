@@ -56,14 +56,14 @@
 
 			$mail->send();
 
-			//if($mail){
-			//    echo '<script>alert("Email has been sent to that account.");window.location.href="/views/login.php";</script>';
+			if($mail){
+			    echo '<script>alert("Email has been sent to that account.");window.location.href="/views/login.php";</script>';
 				//$_SESSION['message'] = "Your Password Reset Link has been sent to this email!";
 				//header("location: /views/login.php");
-			//}
-			//else{
-			 //   echo '<script>alert("Email failed to send.");window.location.href="/views/forgot.php";</script>';
-			//}
+			}
+			else{
+			    echo '<script>alert("Email failed to send.");window.location.href="/views/forgot.php";</script>';
+			}
 		}	
 	}
 ?>
