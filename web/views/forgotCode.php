@@ -10,7 +10,7 @@
 		$email = $con->escape_string($_POST['Email']);
 		$address = $con->escape_string($_POST['address']);
 		
-		$sql = "SELECT * FROM applications.users WHERE (email = '".$email."' AND security='".$address."')";
+		$sql = "SELECT * FROM applications.users WHERE (email = '".$email."' AND address='".$address."')";
 		$result = $con->query($sql);
 		
 		if( $result->num_rows == 0){
