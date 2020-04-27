@@ -20,8 +20,9 @@
 		if($_POST['newPassword'] == $_POST['confirmPassword']){
 			$newPassword = password_hash($_POST['newPassword'], PASSWORD_BCRYPT);
 
-		    $sql = "UPDATE applications.users SET password= '".$newPassword."', hash=$hash WHERE email = $email AND address = $address";
-			if($con->query($sql)){
+		    $sql2 = "UPDATE applications.users SET password= '".$newPassword."', hash=$hash WHERE email = $email AND address = $address";
+		    $result2 = $con->query($sql2)
+			if($result2){
 			    echo '<script>alert("Your password has been reset");window.location.href="/views/login.php";</script>';
 			}
 		}
