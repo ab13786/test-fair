@@ -21,6 +21,12 @@
                     <label for="address"> Street Address</label>
                     <input type="text" name="address" id="address" placeholder="Address">
 
+                    <label for="userPassword">New Password</label>
+                    <input type="password" name="newPassword" id="newPassword">
+
+                    <label for="userPasswordReset">Confirm New Password</label>
+                    <input type="password" name="confirmPassword" id="confirmPassword">
+
                     <section id="submitButtons">
                         <input type="submit" name="Reset" value="Reset" class="submission">
                     </section>					
