@@ -8,7 +8,7 @@
 		session_start();
 	
 		$email = $con->escape_string($_POST['Email']);
-		$id = 30;
+		$id = 34;
 		$sql = "SELECT * FROM applications.users WHERE (`id`=$id AND email = '".$email."')";
 		$result = $con->query($sql);
 
